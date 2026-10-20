@@ -6,7 +6,7 @@ import logging
 import os
 import re
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urljoin, urlparse, urldefrag, parse_qsl, urlencode, urlunparse
 
@@ -21,6 +21,9 @@ SESSION = requests.Session()
 SESSION.headers.update({'User-Agent': 'Mozilla/5.0 (compatible; BangDreamPersonalNewsWatcher/2.0)'})
 TIMEOUT = 20
 MAX_PER_SOURCE = 25
+MAX_POSTS_PER_RUN = 5
+MAX_POSTS_PER_DAY = 24
+MAX_ARTICLE_AGE_DAYS = 14
 MAX_SEEN = 12000
 # Include project-wide stories even if no band is named. Apply filtering only to general corporate feeds.
 RELATED = ('bang dream', 'bangdream', 'バンドリ', 'ガルパ', 'mygo', 'ave mujica', 'roselia',
@@ -128,6 +131,70 @@ def extract(url):
     return title[:220], summary
 
 
+def publication_date(url):
+    """Read a published date from structured article metadata, never the crawl time."""
+    soup = fetch(url)
+    values = []
+    for selector in ('meta[property="article:published_time"]', 'meta[name="date"]',
+                     'meta[name="pubdate"]', 'meta[itemprop="datePublished"]',
+                     'time[datetime]'):
+        for node in soup.select(selector):
+            value = node.get('content') or node.get('datetime')
+            if value:
+                values.append(value)
+    for node in soup.select('script[type="application/ld+json"]'):
+        try:
+            data = json.loads(node.string or node.get_text())
+            queue = data if isinstance(data, list) else [data]
+            while queue:
+                item = queue.pop()
+                if isinstance(item, list):
+                    queue.extend(item)
+                elif isinstance(item, dict):
+                    if item.get('datePublished'):
+                        values.append(item['datePublished'])
+                    if '@graph' in item:
+                        queue.append(item['@graph'])
+        except (ValueError, TypeError):
+            continue
+    # Date encoded in some official article URLs (YYYYMMDD).
+    match = re.search(r'/(20\d{2})(\d{2})(\d{2})/', url)
+    if match:
+        values.append('-'.join(match.groups()))
+    for value in values:
+        try:
+            date = datetime.fromisoformat(str(value).strip().replace('Z', '+00:00'))
+            return date.replace(tzinfo=timezone.utc) if date.tzinfo is None else date.astimezone(timezone.utc)
+        except (ValueError, TypeError):
+            continue
+    return None
+
+
+def in_window(date):
+    return date is not None and timedelta(0) <= datetime.now(timezone.utc) - date <= timedelta(days=MAX_ARTICLE_AGE_DAYS)
+
+
+def quota_available(state):
+    today = datetime.now(timezone.utc).date().isoformat()
+    daily = state.setdefault('daily_posts', {})
+    # UTC calendar day. Remove older counters to avoid unbounded state.
+    for key in list(daily):
+        if key != today:
+            del daily[key]
+    return daily.get(today, 0) < MAX_POSTS_PER_DAY
+
+
+def count_post(state):
+    today = datetime.now(timezone.utc).date().isoformat()
+    daily = state.setdefault('daily_posts', {})
+    daily[today] = daily.get(today, 0) + 1
+    state['_posts_this_run'] += 1
+
+
+def can_post(state):
+    return state['_posts_this_run'] < MAX_POSTS_PER_RUN and quota_available(state)
+
+
 def relevant(title, summary, source):
     if not source.get('filter_related'):
         return True
@@ -177,6 +244,7 @@ def run():
     state.setdefault('global_sent', {})
     # Old global URL entries remain valid after upgrading from v02.
     errors = []
+    state['_posts_this_run'] = 0
     for source in sources:
         if not source.get('enabled', False):
             continue
@@ -197,17 +265,26 @@ def run():
                 # Limit new posts per run; unprocessed URLs stay unmarked for next run.
                 for link in reversed(pending[:MAX_PER_SOURCE]):
                     try:
+                        published = publication_date(link)
+                        if not in_window(published):
+                            # Older/undated articles are intentionally excluded, not deferred.
+                            seen[link] = {'hash': 'out_of_window', 'first_seen': now()}
+                            LOG.info('Skipped old/undated article: %s', link)
+                            continue
+                        if not can_post(state):
+                            LOG.info('Notification quota reached; defer %s', link)
+                            continue  # Not marked seen: retry next scheduled run.
                         title, summary = extract(link)
                         digest = hashlib.sha256((title + '\n' + summary).encode()).hexdigest()
                         if not relevant(title, summary, source):
                             seen[link] = {'hash': 'filtered', 'first_seen': now()}
                             continue
-                        # Exact URL dedupe across sources. Distinct URLs are kept to avoid suppressing useful announcements.
                         if link not in state['global_sent']:
                             send_article(webhook, name, title, summary, link)
                             state['global_sent'][link] = digest
+                            count_post(state)
                         seen[link] = {'hash': digest, 'first_seen': now()}
-                        LOG.info('Sent %s', link)
+                        LOG.info('Processed %s', link)
                     except Exception as exc:
                         errors.append(f'{name}: article {link}: {exc}')
                 # Update detection for previously sent articles in current listing.
@@ -215,13 +292,18 @@ def run():
                 if source.get('detect_updates', True):
                     for link in links[:10]:
                         old = seen.get(link, {})
-                        if not old.get('hash') or old['hash'] == 'filtered':
+                        if not old.get('hash') or old['hash'] in ('filtered', 'out_of_window'):
                             continue
                         try:
+                            if not in_window(publication_date(link)):
+                                continue
+                            if not can_post(state):
+                                continue
                             title, summary = extract(link)
                             digest = hashlib.sha256((title + '\n' + summary).encode()).hexdigest()
                             if digest != old['hash'] and relevant(title, summary, source):
                                 send_article(webhook, name, title, summary, link, update=True)
+                                count_post(state)
                                 old['hash'] = digest
                                 state['global_sent'][link] = digest
                         except Exception as exc:
@@ -232,6 +314,8 @@ def run():
             state['sources'][name] = previous
         except Exception as exc:
             errors.append(f'{name}: listing: {exc}')
+    LOG.info('Notifications this run: %d/%d; today (UTC): %d/%d', state['_posts_this_run'], MAX_POSTS_PER_RUN, state.get('daily_posts', {}).get(datetime.now(timezone.utc).date().isoformat(), 0), MAX_POSTS_PER_DAY)
+    del state['_posts_this_run']
     STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     if errors:
         for error in errors:
