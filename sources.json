@@ -1,6 +1,6 @@
 [
   {"name":"BanG Dream! 総合（全バンド・共通）","url":"https://bang-dream.com/news/","article_pattern":"/news/[0-9]+/?$","enabled":true,"detect_updates":true},
-  {"name":"ガルパ公式","url":"https://bang-dream.bushimo.jp/news/","article_pattern":"/(news|information|info)/[^/]+/?$","enabled":true,"detect_updates":true},
+  {"name":"ガルパ公式","url":"https://bang-dream.bushimo.jp/news/","article_pattern":"/news/[0-9]{8}/post-[0-9]+/?$","enabled":true,"detect_updates":true},
   {"name":"MyGO!!!!! アニメ","url":"https://anime.bang-dream.com/mygo/news/","article_pattern":"/(news|information|info)/[^/]+/?$","enabled":true,"detect_updates":true},
   {"name":"Ave Mujica アニメ","url":"https://anime.bang-dream.com/avemujica/news/","article_pattern":"/(news|information|info)/[^/]+/?$","enabled":true,"detect_updates":true},
   {"name":"Ave Mujica 劇場版","url":"https://avemujica-movie.bang-dream.com/news/","article_pattern":"/(news|information|info)/[^/]+/?$","enabled":true,"detect_updates":true},
