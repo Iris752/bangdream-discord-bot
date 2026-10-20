@@ -25,7 +25,7 @@ MAX_SEEN = 12000
 # Include project-wide stories even if no band is named. Apply filtering only to general corporate feeds.
 RELATED = ('bang dream', 'bangdream', 'バンドリ', 'ガルパ', 'mygo', 'ave mujica', 'roselia',
            'poppin', 'afterglow', 'pastel', 'morfonica', 'raise a suilen', 'ハロー、ハッピー',
-           '夢限大みゅーたいぷ', 'millsage', '一家dumb rock', 'our notes')
+           '夢限大みゅーたいぷ', 'millsage', '一家dumb rock', 'our notes', 'アワーノーツ', '夢ノ結唱', 'poppin’party', 'パスパレ', 'ポピパ', 'ラス', 'ハロハピ', 'ミルサージュ')
 # Exclude personal activities only on broad sources; do not discard official band announcements
 # simply because they mention a cast member.
 PERSONAL = ('個人イベント', 'ソロイベント', '個人名義', 'ソロ活動', '声優個人', '個人出演')
@@ -160,7 +160,7 @@ def post(webhook, content):
 
 def send_article(webhook, source, title, summary, url, update=False):
     header = f"**【{'記事更新' if update else '新着'}／{source}】{title}**\n"
-    footer = f'\n\n公式URL：{url}'
+    footer = f'\n\n記事URL：{url}'
     # One message per article: avoiding partial multi-message duplicates if a later request fails.
     budget = max(100, 1900 - len(header) - len(footer))
     text = summary if len(summary) <= budget else summary[:budget - 12] + '\n（以下省略）'
@@ -175,6 +175,7 @@ def run():
     state = json.loads(STATE.read_text(encoding='utf-8')) if STATE.exists() else {'sources': {}, 'global_sent': {}}
     state.setdefault('sources', {})
     state.setdefault('global_sent', {})
+    # Old global URL entries remain valid after upgrading from v02.
     errors = []
     for source in sources:
         if not source.get('enabled', False):
