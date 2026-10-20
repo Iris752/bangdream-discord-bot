@@ -62,6 +62,106 @@
         "https://bang-dream.com/news/2426/": {
           "hash": null,
           "first_seen": "2026-10-20T11:47:54.263957+00:00"
+        },
+        "https://bang-dream.com/news/2399/": {
+          "hash": "627b942d4e6d628bcf239b25dbb5495d7eb924c811d37d95b7a3bc9f2aa4d526",
+          "first_seen": "2026-10-20T13:44:12.486706+00:00"
+        },
+        "https://bang-dream.com/news/2400/": {
+          "hash": "9e53735a85cfb242480e0af05d46856fc7c613a7a3497f85586473cecbb2dac9",
+          "first_seen": "2026-10-20T13:44:13.539189+00:00"
+        },
+        "https://bang-dream.com/news/2401/": {
+          "hash": "39baa33a86a4a8aa1854309418f57e99eb53d962778dbe6dc7decb50401fd085",
+          "first_seen": "2026-10-20T13:44:14.280838+00:00"
+        },
+        "https://bang-dream.com/news/2403/": {
+          "hash": "97acc17d4119d96820a76cade1f6abb8c7174e8ed0d3fe4389909dda52433fbe",
+          "first_seen": "2026-10-20T13:44:15.036824+00:00"
+        },
+        "https://bang-dream.com/news/2404/": {
+          "hash": "22e2d55f24c332537b81257d9ff0ae2027d767519387453a6f565980421b9701",
+          "first_seen": "2026-10-20T13:44:15.607661+00:00"
+        },
+        "https://bang-dream.com/news/2406/": {
+          "hash": "426cb34f5dddb2b207918a3772bab8be578a4c8d32fc1961e56b26346eca1b76",
+          "first_seen": "2026-10-20T13:44:16.558859+00:00"
+        },
+        "https://bang-dream.com/news/2407/": {
+          "hash": "5fb2299b1b469cafa203798dce62914fda8f9ce92d2fa76e9e166e22caa94471",
+          "first_seen": "2026-10-20T13:44:17.499529+00:00"
+        },
+        "https://bang-dream.com/news/2408/": {
+          "hash": "029adc6542620c8c41aaee80a2e99421782c00bf36c3d6ce1434d9ae8fd063bd",
+          "first_seen": "2026-10-20T13:44:18.034441+00:00"
+        },
+        "https://bang-dream.com/news/2412/": {
+          "hash": "83b86d9e6d2939d3b5867a22c3c1f8deb7d4c9d744d10efb3b37b429ca0b33e6",
+          "first_seen": "2026-10-20T13:44:18.845967+00:00"
+        },
+        "https://bang-dream.com/news/2409/": {
+          "hash": "80a49d4ff2620e93f9f4674862efb6a427c24fd3ef2d0f90688731d9a9e80ebe",
+          "first_seen": "2026-10-20T13:44:19.527331+00:00"
+        },
+        "https://bang-dream.com/news/2410/": {
+          "hash": "a7c9be5e8dfb0a54d858b73d8906efd842f4d39b887904955a91302d5217b186",
+          "first_seen": "2026-10-20T13:44:20.181875+00:00"
+        },
+        "https://bang-dream.com/news/2413/": {
+          "hash": "ab3c6f1b05e7b33ee1ec3919eb5cdf320824c7e794cb3878cd4c87113a9e732d",
+          "first_seen": "2026-10-20T13:44:21.095153+00:00"
+        },
+        "https://bang-dream.com/news/2415/": {
+          "hash": "fbf43c3876bf804b87be8642b4496ee8437e41acaaf7d83c4ac80e6165d1bc3a",
+          "first_seen": "2026-10-20T13:44:21.738892+00:00"
+        },
+        "https://bang-dream.com/news/2416/": {
+          "hash": "6b17ec7338ac210b5e753fa944289d8b9d92c7e19f9fd68c6fe305795203f7af",
+          "first_seen": "2026-10-20T13:44:22.624126+00:00"
+        },
+        "https://bang-dream.com/news/2405/": {
+          "hash": "b87ae0e6778ea7f806053c96ed8dd57147171817d9fea5f7f1dd1160266240db",
+          "first_seen": "2026-10-20T13:44:23.225419+00:00"
+        },
+        "https://bang-dream.com/news/2417/": {
+          "hash": "128fd4ba8b11120653a43cdb4d21b88fc1ab8d01b1d0e110968d4c44df6873f3",
+          "first_seen": "2026-10-20T13:44:23.802303+00:00"
+        },
+        "https://bang-dream.com/news/2420/": {
+          "hash": "327cf60cc3d5bcbb6c3976708061f5a0afad5460606956ce283869ef3ffc8a3b",
+          "first_seen": "2026-10-20T13:44:24.720286+00:00"
+        },
+        "https://bang-dream.com/news/2414/": {
+          "hash": "026c098f03f1af8b73a6cdeb0f6d1acf183f6c094d4df32beac48b857456ff44",
+          "first_seen": "2026-10-20T13:44:25.671993+00:00"
+        },
+        "https://bang-dream.com/news/2419/": {
+          "hash": "bc17476bc747d4002023b129ee9cb3e3d451bd5762c25d59e69eb38d926900b4",
+          "first_seen": "2026-10-20T13:44:26.319171+00:00"
+        },
+        "https://bang-dream.com/news/2418/": {
+          "hash": "9bb21157db53587d003e244025a7b4d12260388c21328696f9207737f95a8057",
+          "first_seen": "2026-10-20T13:44:27.122535+00:00"
+        },
+        "https://bang-dream.com/news/2421/": {
+          "hash": "1d5c749198aeffe681b1bb7196ea8885c99d6efcb0c80dae5b477f1f5bf9ae24",
+          "first_seen": "2026-10-20T13:44:27.926925+00:00"
+        },
+        "https://bang-dream.com/news/2423/": {
+          "hash": "1db5401f61c15162563745cdd9ed0a4c0f715ac87ff133a6dd32ef895449f830",
+          "first_seen": "2026-10-20T13:44:28.580637+00:00"
+        },
+        "https://bang-dream.com/news/2422/": {
+          "hash": "710e2bc20790169052fad29e06f5c4a1bdd8013643e7117dc5cd6962b8a7dd52",
+          "first_seen": "2026-10-20T13:44:29.569672+00:00"
+        },
+        "https://bang-dream.com/news/2425/": {
+          "hash": "8e02333116ec8fe59393dd8492d94829155f7fc1f1be358f146480f510a203a8",
+          "first_seen": "2026-10-20T13:44:30.673528+00:00"
+        },
+        "https://bang-dream.com/news/2424/": {
+          "hash": "0e30894fc31ae1b473fc7ac291676917520ff29e51cb85242a92d8a2761c254b",
+          "first_seen": "2026-10-20T13:44:31.326945+00:00"
         }
       }
     },
@@ -236,7 +336,78 @@
           "first_seen": "2026-10-20T11:47:58.287141+00:00"
         }
       }
+    },
+    "ブシロードミュージック お知らせ（関連情報）": {
+      "initialized": true,
+      "seen": {
+        "https://bushiroad-music.com/news/22964/": {
+          "hash": null,
+          "first_seen": "2026-10-20T13:44:36.129563+00:00"
+        },
+        "https://bushiroad-music.com/news/22877/": {
+          "hash": null,
+          "first_seen": "2026-10-20T13:44:36.129590+00:00"
+        },
+        "https://bushiroad-music.com/news/22430/": {
+          "hash": null,
+          "first_seen": "2026-10-20T13:44:36.129595+00:00"
+        },
+        "https://bushiroad-music.com/news/22109/": {
+          "hash": null,
+          "first_seen": "2026-10-20T13:44:36.129599+00:00"
+        },
+        "https://bushiroad-music.com/news/21905/": {
+          "hash": null,
+          "first_seen": "2026-10-20T13:44:36.129604+00:00"
+        },
+        "https://bushiroad-music.com/news/21876/": {
+          "hash": null,
+          "first_seen": "2026-10-20T13:44:36.129609+00:00"
+        },
+        "https://bushiroad-music.com/news/19583/": {
+          "hash": null,
+          "first_seen": "2026-10-20T13:44:36.129614+00:00"
+        },
+        "https://bushiroad-music.com/news/321/": {
+          "hash": null,
+          "first_seen": "2026-10-20T13:44:36.129618+00:00"
+        },
+        "https://bushiroad-music.com/news/20656/": {
+          "hash": null,
+          "first_seen": "2026-10-20T13:44:36.129622+00:00"
+        },
+        "https://bushiroad-music.com/news/20580/": {
+          "hash": null,
+          "first_seen": "2026-10-20T13:44:36.129627+00:00"
+        }
+      }
     }
   },
-  "global_sent": {}
+  "global_sent": {
+    "https://bang-dream.com/news/2399/": "627b942d4e6d628bcf239b25dbb5495d7eb924c811d37d95b7a3bc9f2aa4d526",
+    "https://bang-dream.com/news/2400/": "9e53735a85cfb242480e0af05d46856fc7c613a7a3497f85586473cecbb2dac9",
+    "https://bang-dream.com/news/2401/": "39baa33a86a4a8aa1854309418f57e99eb53d962778dbe6dc7decb50401fd085",
+    "https://bang-dream.com/news/2403/": "97acc17d4119d96820a76cade1f6abb8c7174e8ed0d3fe4389909dda52433fbe",
+    "https://bang-dream.com/news/2404/": "22e2d55f24c332537b81257d9ff0ae2027d767519387453a6f565980421b9701",
+    "https://bang-dream.com/news/2406/": "426cb34f5dddb2b207918a3772bab8be578a4c8d32fc1961e56b26346eca1b76",
+    "https://bang-dream.com/news/2407/": "5fb2299b1b469cafa203798dce62914fda8f9ce92d2fa76e9e166e22caa94471",
+    "https://bang-dream.com/news/2408/": "029adc6542620c8c41aaee80a2e99421782c00bf36c3d6ce1434d9ae8fd063bd",
+    "https://bang-dream.com/news/2412/": "83b86d9e6d2939d3b5867a22c3c1f8deb7d4c9d744d10efb3b37b429ca0b33e6",
+    "https://bang-dream.com/news/2409/": "80a49d4ff2620e93f9f4674862efb6a427c24fd3ef2d0f90688731d9a9e80ebe",
+    "https://bang-dream.com/news/2410/": "a7c9be5e8dfb0a54d858b73d8906efd842f4d39b887904955a91302d5217b186",
+    "https://bang-dream.com/news/2413/": "ab3c6f1b05e7b33ee1ec3919eb5cdf320824c7e794cb3878cd4c87113a9e732d",
+    "https://bang-dream.com/news/2415/": "fbf43c3876bf804b87be8642b4496ee8437e41acaaf7d83c4ac80e6165d1bc3a",
+    "https://bang-dream.com/news/2416/": "6b17ec7338ac210b5e753fa944289d8b9d92c7e19f9fd68c6fe305795203f7af",
+    "https://bang-dream.com/news/2405/": "b87ae0e6778ea7f806053c96ed8dd57147171817d9fea5f7f1dd1160266240db",
+    "https://bang-dream.com/news/2417/": "128fd4ba8b11120653a43cdb4d21b88fc1ab8d01b1d0e110968d4c44df6873f3",
+    "https://bang-dream.com/news/2420/": "327cf60cc3d5bcbb6c3976708061f5a0afad5460606956ce283869ef3ffc8a3b",
+    "https://bang-dream.com/news/2414/": "026c098f03f1af8b73a6cdeb0f6d1acf183f6c094d4df32beac48b857456ff44",
+    "https://bang-dream.com/news/2419/": "bc17476bc747d4002023b129ee9cb3e3d451bd5762c25d59e69eb38d926900b4",
+    "https://bang-dream.com/news/2418/": "9bb21157db53587d003e244025a7b4d12260388c21328696f9207737f95a8057",
+    "https://bang-dream.com/news/2421/": "1d5c749198aeffe681b1bb7196ea8885c99d6efcb0c80dae5b477f1f5bf9ae24",
+    "https://bang-dream.com/news/2423/": "1db5401f61c15162563745cdd9ed0a4c0f715ac87ff133a6dd32ef895449f830",
+    "https://bang-dream.com/news/2422/": "710e2bc20790169052fad29e06f5c4a1bdd8013643e7117dc5cd6962b8a7dd52",
+    "https://bang-dream.com/news/2425/": "8e02333116ec8fe59393dd8492d94829155f7fc1f1be358f146480f510a203a8",
+    "https://bang-dream.com/news/2424/": "0e30894fc31ae1b473fc7ac291676917520ff29e51cb85242a92d8a2761c254b"
+  }
 }
