@@ -1,0 +1,242 @@
+{
+  "sources": {
+    "BanG Dream! 総合（全バンド・共通）": {
+      "initialized": true,
+      "seen": {
+        "https://bang-dream.com/news/2442/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263872+00:00"
+        },
+        "https://bang-dream.com/news/2441/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263893+00:00"
+        },
+        "https://bang-dream.com/news/2440/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263897+00:00"
+        },
+        "https://bang-dream.com/news/2439/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263899+00:00"
+        },
+        "https://bang-dream.com/news/2432/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263901+00:00"
+        },
+        "https://bang-dream.com/news/2436/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263904+00:00"
+        },
+        "https://bang-dream.com/news/2434/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263906+00:00"
+        },
+        "https://bang-dream.com/news/2431/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263916+00:00"
+        },
+        "https://bang-dream.com/news/2435/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263919+00:00"
+        },
+        "https://bang-dream.com/news/2433/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263921+00:00"
+        },
+        "https://bang-dream.com/news/2430/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263923+00:00"
+        },
+        "https://bang-dream.com/news/2429/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263926+00:00"
+        },
+        "https://bang-dream.com/news/2428/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263930+00:00"
+        },
+        "https://bang-dream.com/news/2427/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263940+00:00"
+        },
+        "https://bang-dream.com/news/2426/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:54.263957+00:00"
+        }
+      }
+    },
+    "ガルパ公式": {
+      "initialized": true,
+      "seen": {
+        "https://bang-dream.bushimo.jp/news/20260904/post-359/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:55.388183+00:00"
+        },
+        "https://bang-dream.bushimo.jp/news/20260429/post-357/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:55.388205+00:00"
+        },
+        "https://bang-dream.bushimo.jp/news/20260315/post-356/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:55.388210+00:00"
+        },
+        "https://bang-dream.bushimo.jp/news/20260311/post-354/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:55.388214+00:00"
+        },
+        "https://bang-dream.bushimo.jp/news/20260307/post-355/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:55.388218+00:00"
+        },
+        "https://bang-dream.bushimo.jp/news/20260227/post-353/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:55.388222+00:00"
+        },
+        "https://bang-dream.bushimo.jp/news/20260217/post-352/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:55.388228+00:00"
+        },
+        "https://bang-dream.bushimo.jp/news/20260209/post-351/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:55.388232+00:00"
+        },
+        "https://bang-dream.bushimo.jp/news/20260112/post-350/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:55.388236+00:00"
+        },
+        "https://bang-dream.bushimo.jp/news/20251215/post-348/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:55.388240+00:00"
+        }
+      }
+    },
+    "MyGO!!!!! アニメ": {
+      "initialized": true,
+      "seen": {
+        "https://anime.bang-dream.com/mygo/news/post-34/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:56.256044+00:00"
+        },
+        "https://anime.bang-dream.com/mygo/news/post-33/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:56.256069+00:00"
+        },
+        "https://anime.bang-dream.com/mygo/news/post-32/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:56.256074+00:00"
+        },
+        "https://anime.bang-dream.com/mygo/news/post-31/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:56.256077+00:00"
+        },
+        "https://anime.bang-dream.com/mygo/news/post-30/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:56.256081+00:00"
+        },
+        "https://anime.bang-dream.com/mygo/news/post-29/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:56.256085+00:00"
+        },
+        "https://anime.bang-dream.com/mygo/news/post-28/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:56.256089+00:00"
+        },
+        "https://anime.bang-dream.com/mygo/news/post-27/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:56.256093+00:00"
+        },
+        "https://anime.bang-dream.com/mygo/news/post-26/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:56.256099+00:00"
+        },
+        "https://anime.bang-dream.com/mygo/news/post-25/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:56.256104+00:00"
+        }
+      }
+    },
+    "Ave Mujica アニメ": {
+      "initialized": true,
+      "seen": {
+        "https://anime.bang-dream.com/avemujica/news/post-17/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:57.021573+00:00"
+        },
+        "https://anime.bang-dream.com/avemujica/news/post-15/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:57.021596+00:00"
+        },
+        "https://anime.bang-dream.com/avemujica/news/post-14/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:57.021601+00:00"
+        },
+        "https://anime.bang-dream.com/avemujica/news/post-13/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:57.021605+00:00"
+        },
+        "https://anime.bang-dream.com/avemujica/news/post-12-2/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:57.021609+00:00"
+        },
+        "https://anime.bang-dream.com/avemujica/news/post-12/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:57.021613+00:00"
+        },
+        "https://anime.bang-dream.com/avemujica/news/post-10/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:57.021617+00:00"
+        },
+        "https://anime.bang-dream.com/avemujica/news/post-8/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:57.021620+00:00"
+        },
+        "https://anime.bang-dream.com/avemujica/news/post-7/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:57.021624+00:00"
+        }
+      }
+    },
+    "Ave Mujica 劇場版": {
+      "initialized": true,
+      "seen": {
+        "https://avemujica-movie.bang-dream.com/news/post-10/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:58.287087+00:00"
+        },
+        "https://avemujica-movie.bang-dream.com/news/post-8/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:58.287110+00:00"
+        },
+        "https://avemujica-movie.bang-dream.com/news/post-7/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:58.287115+00:00"
+        },
+        "https://avemujica-movie.bang-dream.com/news/post-6/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:58.287121+00:00"
+        },
+        "https://avemujica-movie.bang-dream.com/news/post-5/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:58.287125+00:00"
+        },
+        "https://avemujica-movie.bang-dream.com/news/post-4/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:58.287129+00:00"
+        },
+        "https://avemujica-movie.bang-dream.com/news/post-3/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:58.287133+00:00"
+        },
+        "https://avemujica-movie.bang-dream.com/news/post-2/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:58.287137+00:00"
+        },
+        "https://avemujica-movie.bang-dream.com/news/post-1/": {
+          "hash": null,
+          "first_seen": "2026-10-20T11:47:58.287141+00:00"
+        }
+      }
+    }
+  },
+  "global_sent": {}
+}
