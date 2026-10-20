@@ -1,0 +1,10 @@
+[
+  {"name":"BanG Dream! 総合（全バンド・共通）","url":"https://bang-dream.com/news/","article_pattern":"/news/[0-9]+/?$","enabled":true,"detect_updates":true},
+  {"name":"ガルパ公式","url":"https://bang-dream.bushimo.jp/news/","article_pattern":"/(news|information|info)/[^/]+/?$","enabled":true,"detect_updates":true},
+  {"name":"MyGO!!!!! アニメ","url":"https://anime.bang-dream.com/mygo/news/","article_pattern":"/(news|information|info)/[^/]+/?$","enabled":true,"detect_updates":true},
+  {"name":"Ave Mujica アニメ","url":"https://anime.bang-dream.com/avemujica/news/","article_pattern":"/(news|information|info)/[^/]+/?$","enabled":true,"detect_updates":true},
+  {"name":"Ave Mujica 劇場版","url":"https://avemujica-movie.bang-dream.com/news/","article_pattern":"/(news|information|info)/[^/]+/?$","enabled":true,"detect_updates":true},
+  {"name":"MyGO!!!!! × Ave Mujica 続編","url":"https://anime.bang-dream.com/mygo-avemujica/","article_pattern":"/(news|information|info)/[^/]+/?$","enabled":false,"detect_updates":true},
+  {"name":"ブシロード公式（関連情報のみ）","url":"https://bushiroad.com/","article_pattern":"/(news|information|topics|info)/[^/]+/?$","enabled":false,"filter_related":true},
+  {"name":"ブシロードミュージック（関連情報のみ）","url":"https://bushiroad-music.com/","article_pattern":"/(news|information|topics|info)/[^/]+/?$","enabled":false,"filter_related":true}
+]
