@@ -88,7 +88,7 @@
   {
     "name": "ブシロード公式",
     "url": "https://bushiroad.com/",
-    "article_pattern": "/(news|information|topics|info)/[^/]+/?$",
+    "article_pattern": "/(news|information|topics|info|posts|articles)/[^/]+/?$|/news[^/]*\\\\.html$",
     "enabled": true,
     "discovery": "search_rss",
     "detect_updates": false,
@@ -116,9 +116,9 @@
   {
     "name": "ブシロードオンラインストア",
     "url": "https://bushiroad-store.com/",
-    "article_pattern": "/(products|collections|blogs|pages)/[^/]+/?$",
+    "article_pattern": "/products/[^/]+/?$",
     "enabled": true,
-    "discovery": "search_rss",
+    "discovery": "shopify",
     "detect_updates": false,
     "filter_related": true,
     "search_terms": [
@@ -158,7 +158,7 @@
   {
     "name": "4Gamer",
     "url": "https://www.4gamer.net/",
-    "article_pattern": "/games/[^/]+/[^/]+/[^/]+/?$",
+    "article_pattern": "/games/\\\\d+/[^/]+/\\\\d{8}[^/]*\\\\.html$|/games/\\\\d+/[^/]+/[^/]+\\\\.html$",
     "enabled": true,
     "discovery": "search_rss",
     "detect_updates": false,
@@ -172,7 +172,7 @@
   {
     "name": "電撃オンライン",
     "url": "https://dengekionline.com/",
-    "article_pattern": "/(articles|article)/[^/]+/?$",
+    "article_pattern": "/(articles|article)/[^/]+/?$|/article/[^/]+/[^/]+/?$",
     "enabled": true,
     "discovery": "search_rss",
     "detect_updates": false,
