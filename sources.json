@@ -88,15 +88,18 @@
   {
     "name": "ブシロード公式",
     "url": "https://bushiroad.com/",
-    "article_pattern": "/(news|information|topics|info|posts|articles)/[^/]+/?$|/news[^/]*\\\\.html$",
+    "article_pattern": "/(news|information|topics|info|posts|articles)/[^/]+/?$|/news[^/]*\\.html$",
     "enabled": true,
-    "discovery": "search_rss",
+    "discovery": "hybrid",
     "detect_updates": false,
     "filter_related": true,
     "search_terms": [
       "バンドリ",
       "BanG Dream",
       "MyGO Ave Mujica"
+    ],
+    "search_pages": [
+      "https://bushiroad.com/news"
     ]
   },
   {
@@ -125,6 +128,12 @@
       "バンドリ",
       "BanG Dream",
       "MyGO Ave Mujica"
+    ],
+    "shopify_api": false,
+    "search_pages": [
+      "https://bushiroad-store.com/search?q=BanG%20Dream",
+      "https://bushiroad-store.com/search?q=MyGO",
+      "https://bushiroad-store.com/search?q=Ave%20Mujica"
     ]
   },
   {
@@ -143,30 +152,36 @@
   },
   {
     "name": "音楽ナタリー",
-    "url": "https://natalie.mu/music/",
+    "url": "https://natalie.mu/",
     "article_pattern": "/music/news/[0-9]+/?$",
     "enabled": true,
-    "discovery": "search_rss",
+    "discovery": "hybrid",
     "detect_updates": false,
     "filter_related": true,
     "search_terms": [
       "バンドリ",
       "BanG Dream",
       "MyGO Ave Mujica"
+    ],
+    "search_pages": [
+      "https://natalie.mu/music/news"
     ]
   },
   {
     "name": "4Gamer",
     "url": "https://www.4gamer.net/",
-    "article_pattern": "/games/\\\\d+/[^/]+/\\\\d{8}[^/]*\\\\.html$|/games/\\\\d+/[^/]+/[^/]+\\\\.html$",
+    "article_pattern": "/games/\\d+/[^/]+/\\d{8}[^/]*\\.html$|/games/\\d+/[^/]+/[^/]+\\.html$",
     "enabled": true,
-    "discovery": "search_rss",
+    "discovery": "hybrid",
     "detect_updates": false,
     "filter_related": true,
     "search_terms": [
       "バンドリ",
       "BanG Dream",
       "MyGO Ave Mujica"
+    ],
+    "search_pages": [
+      "https://www.4gamer.net/"
     ]
   },
   {
