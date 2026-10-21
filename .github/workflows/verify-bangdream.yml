@@ -1,0 +1,24 @@
+name: Verify BanG Dream News (No Discord)
+on:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Verify only (no Discord, no state writes)
+        run: python verify_bot.py --per-source 5 --max-seconds 240
+      - name: Upload verification CSV
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bangdream-verification-results
+          path: verification_results.csv
+          if-no-files-found: warn
