@@ -363,7 +363,100 @@
           "hash": "out_of_window",
           "first_seen": "2026-10-20T14:03:26.221623+00:00"
         }
-      }
+      },
+      "observed_v07": {
+        "https://bang-dream.com/news/2442/": "2026-10-21T10:22:07.593575+00:00",
+        "https://bang-dream.com/news/2441/": "2026-10-21T10:22:07.593602+00:00",
+        "https://bang-dream.com/news/2440/": "2026-10-21T10:22:07.593616+00:00",
+        "https://bang-dream.com/news/2439/": "2026-10-21T10:22:07.593626+00:00",
+        "https://bang-dream.com/news/2432/": "2026-10-21T10:22:07.593639+00:00",
+        "https://bang-dream.com/news/2436/": "2026-10-21T10:22:07.593649+00:00",
+        "https://bang-dream.com/news/2434/": "2026-10-21T10:22:07.593659+00:00",
+        "https://bang-dream.com/news/2431/": "2026-10-21T10:22:07.593679+00:00",
+        "https://bang-dream.com/news/2435/": "2026-10-21T10:22:07.593688+00:00",
+        "https://bang-dream.com/news/2433/": "2026-10-21T10:22:07.593696+00:00",
+        "https://bang-dream.com/news/2430/": "2026-10-21T10:22:07.593703+00:00",
+        "https://bang-dream.com/news/2429/": "2026-10-21T10:22:07.593712+00:00",
+        "https://bang-dream.com/news/2428/": "2026-10-21T10:22:07.593719+00:00",
+        "https://bang-dream.com/news/2427/": "2026-10-21T10:22:07.593726+00:00",
+        "https://bang-dream.com/news/2426/": "2026-10-21T10:22:07.593733+00:00",
+        "https://bang-dream.com/news/2424/": "2026-10-21T10:22:07.593740+00:00",
+        "https://bang-dream.com/news/2425/": "2026-10-21T10:22:07.593748+00:00",
+        "https://bang-dream.com/news/2422/": "2026-10-21T10:22:07.593756+00:00",
+        "https://bang-dream.com/news/2423/": "2026-10-21T10:22:07.593763+00:00",
+        "https://bang-dream.com/news/2421/": "2026-10-21T10:22:07.593770+00:00",
+        "https://bang-dream.com/news/2418/": "2026-10-21T10:22:07.593777+00:00",
+        "https://bang-dream.com/news/2419/": "2026-10-21T10:22:07.593785+00:00",
+        "https://bang-dream.com/news/2414/": "2026-10-21T10:22:07.593794+00:00",
+        "https://bang-dream.com/news/2420/": "2026-10-21T10:22:07.593816+00:00",
+        "https://bang-dream.com/news/2417/": "2026-10-21T10:22:07.593824+00:00",
+        "https://bang-dream.com/news/2405/": "2026-10-21T10:22:07.593831+00:00",
+        "https://bang-dream.com/news/2416/": "2026-10-21T10:22:07.593840+00:00",
+        "https://bang-dream.com/news/2415/": "2026-10-21T10:22:07.593847+00:00",
+        "https://bang-dream.com/news/2413/": "2026-10-21T10:22:07.593855+00:00",
+        "https://bang-dream.com/news/2410/": "2026-10-21T10:22:07.593862+00:00",
+        "https://bang-dream.com/news/2409/": "2026-10-21T10:22:07.593870+00:00",
+        "https://bang-dream.com/news/2412/": "2026-10-21T10:22:07.593878+00:00",
+        "https://bang-dream.com/news/2408/": "2026-10-21T10:22:07.593885+00:00",
+        "https://bang-dream.com/news/2407/": "2026-10-21T10:22:07.593893+00:00",
+        "https://bang-dream.com/news/2406/": "2026-10-21T10:22:07.593901+00:00",
+        "https://bang-dream.com/news/2404/": "2026-10-21T10:22:07.593908+00:00",
+        "https://bang-dream.com/news/2403/": "2026-10-21T10:22:07.593916+00:00",
+        "https://bang-dream.com/news/2401/": "2026-10-21T10:22:07.593923+00:00",
+        "https://bang-dream.com/news/2400/": "2026-10-21T10:22:07.593930+00:00",
+        "https://bang-dream.com/news/2399/": "2026-10-21T10:22:07.593937+00:00",
+        "https://bang-dream.com/news/2397/": "2026-10-21T10:22:07.593944+00:00",
+        "https://bang-dream.com/news/2398/": "2026-10-21T10:22:07.593951+00:00",
+        "https://bang-dream.com/news/2396/": "2026-10-21T10:22:07.593959+00:00",
+        "https://bang-dream.com/news/2395/": "2026-10-21T10:22:07.593969+00:00",
+        "https://bang-dream.com/news/2393/": "2026-10-21T10:22:07.593978+00:00",
+        "https://bang-dream.com/news/2392/": "2026-10-21T10:22:07.593985+00:00",
+        "https://bang-dream.com/news/2391/": "2026-10-21T10:22:07.593989+00:00",
+        "https://bang-dream.com/news/2390/": "2026-10-21T10:22:07.593993+00:00",
+        "https://bang-dream.com/news/2369/": "2026-10-21T10:22:07.593997+00:00",
+        "https://bang-dream.com/news/2360/": "2026-10-21T10:22:07.594001+00:00",
+        "https://bang-dream.com/news/2345/": "2026-10-21T10:22:07.594005+00:00",
+        "https://bang-dream.com/news/2348/": "2026-10-21T10:22:07.594009+00:00",
+        "https://bang-dream.com/news/2355/": "2026-10-21T10:22:07.594013+00:00",
+        "https://bang-dream.com/news/2344/": "2026-10-21T10:22:07.594016+00:00",
+        "https://bang-dream.com/news/2341/": "2026-10-21T10:22:07.594020+00:00",
+        "https://bang-dream.com/news/2334/": "2026-10-21T10:22:07.594024+00:00",
+        "https://bang-dream.com/news/2331/": "2026-10-21T10:22:07.594028+00:00",
+        "https://bang-dream.com/news/2330/": "2026-10-21T10:22:07.594032+00:00",
+        "https://bang-dream.com/news/2388/": "2026-10-21T10:22:07.594035+00:00",
+        "https://bang-dream.com/news/2268/": "2026-10-21T10:22:07.594039+00:00",
+        "https://bang-dream.com/news/2115/": "2026-10-21T10:22:07.594043+00:00",
+        "https://bang-dream.com/news/2116/": "2026-10-21T10:22:07.594047+00:00",
+        "https://bang-dream.com/news/2045/": "2026-10-21T10:22:07.594050+00:00",
+        "https://bang-dream.com/news/2049/": "2026-10-21T10:22:07.594054+00:00",
+        "https://bang-dream.com/news/2050/": "2026-10-21T10:22:07.594058+00:00",
+        "https://bang-dream.com/news/2040/": "2026-10-21T10:22:07.594066+00:00",
+        "https://bang-dream.com/news/2027/": "2026-10-21T10:22:07.594070+00:00",
+        "https://bang-dream.com/news/2014/": "2026-10-21T10:22:07.594074+00:00",
+        "https://bang-dream.com/news/2001/": "2026-10-21T10:22:07.594078+00:00",
+        "https://bang-dream.com/news/1972/": "2026-10-21T10:22:07.594081+00:00",
+        "https://bang-dream.com/news/1953/": "2026-10-21T10:22:07.594085+00:00",
+        "https://bang-dream.com/news/1869/": "2026-10-21T10:22:07.594089+00:00",
+        "https://bang-dream.com/news/1840/": "2026-10-21T10:22:07.594093+00:00",
+        "https://bang-dream.com/news/1810/": "2026-10-21T10:22:07.594097+00:00",
+        "https://bang-dream.com/news/2298/": "2026-10-21T10:22:07.594101+00:00",
+        "https://bang-dream.com/news/2293/": "2026-10-21T10:22:07.594104+00:00",
+        "https://bang-dream.com/news/2289/": "2026-10-21T10:22:07.594108+00:00",
+        "https://bang-dream.com/news/2285/": "2026-10-21T10:22:07.594112+00:00",
+        "https://bang-dream.com/news/2283/": "2026-10-21T10:22:07.594116+00:00",
+        "https://bang-dream.com/news/2280/": "2026-10-21T10:22:07.594120+00:00",
+        "https://bang-dream.com/news/2275/": "2026-10-21T10:22:07.594124+00:00",
+        "https://bang-dream.com/news/2267/": "2026-10-21T10:22:07.594128+00:00",
+        "https://bang-dream.com/news/2256/": "2026-10-21T10:22:07.594132+00:00",
+        "https://bang-dream.com/news/2251/": "2026-10-21T10:22:07.594136+00:00",
+        "https://bang-dream.com/news/2245/": "2026-10-21T10:22:07.594140+00:00",
+        "https://bang-dream.com/news/2242/": "2026-10-21T10:22:07.594145+00:00",
+        "https://bang-dream.com/news/2240/": "2026-10-21T10:22:07.594151+00:00",
+        "https://bang-dream.com/news/2237/": "2026-10-21T10:22:07.594155+00:00",
+        "https://bang-dream.com/news/2232/": "2026-10-21T10:22:07.594159+00:00",
+        "https://bang-dream.com/news/2225/": "2026-10-21T10:22:07.594163+00:00"
+      },
+      "url_watch_v07_initialized": true
     },
     "ガルパ公式": {
       "initialized": true,
@@ -408,7 +501,20 @@
           "hash": "out_of_window",
           "first_seen": "2026-10-20T11:47:55.388240+00:00"
         }
-      }
+      },
+      "observed_v07": {
+        "https://bang-dream.bushimo.jp/news/20260904/post-359/": "2026-10-21T10:22:08.659349+00:00",
+        "https://bang-dream.bushimo.jp/news/20260429/post-357/": "2026-10-21T10:22:08.659379+00:00",
+        "https://bang-dream.bushimo.jp/news/20260315/post-356/": "2026-10-21T10:22:08.659390+00:00",
+        "https://bang-dream.bushimo.jp/news/20260311/post-354/": "2026-10-21T10:22:08.659399+00:00",
+        "https://bang-dream.bushimo.jp/news/20260307/post-355/": "2026-10-21T10:22:08.659410+00:00",
+        "https://bang-dream.bushimo.jp/news/20260227/post-353/": "2026-10-21T10:22:08.659420+00:00",
+        "https://bang-dream.bushimo.jp/news/20260217/post-352/": "2026-10-21T10:22:08.659428+00:00",
+        "https://bang-dream.bushimo.jp/news/20260209/post-351/": "2026-10-21T10:22:08.659435+00:00",
+        "https://bang-dream.bushimo.jp/news/20260112/post-350/": "2026-10-21T10:22:08.659441+00:00",
+        "https://bang-dream.bushimo.jp/news/20251215/post-348/": "2026-10-21T10:22:08.659449+00:00"
+      },
+      "url_watch_v07_initialized": true
     },
     "MyGO!!!!! アニメ": {
       "initialized": true,
@@ -453,7 +559,20 @@
           "hash": null,
           "first_seen": "2026-10-20T11:47:56.256104+00:00"
         }
-      }
+      },
+      "observed_v07": {
+        "https://anime.bang-dream.com/mygo/news/post-34/": "2026-10-21T10:22:09.589943+00:00",
+        "https://anime.bang-dream.com/mygo/news/post-33/": "2026-10-21T10:22:09.589961+00:00",
+        "https://anime.bang-dream.com/mygo/news/post-32/": "2026-10-21T10:22:09.589966+00:00",
+        "https://anime.bang-dream.com/mygo/news/post-31/": "2026-10-21T10:22:09.589971+00:00",
+        "https://anime.bang-dream.com/mygo/news/post-30/": "2026-10-21T10:22:09.589976+00:00",
+        "https://anime.bang-dream.com/mygo/news/post-29/": "2026-10-21T10:22:09.589981+00:00",
+        "https://anime.bang-dream.com/mygo/news/post-28/": "2026-10-21T10:22:09.589986+00:00",
+        "https://anime.bang-dream.com/mygo/news/post-27/": "2026-10-21T10:22:09.589990+00:00",
+        "https://anime.bang-dream.com/mygo/news/post-26/": "2026-10-21T10:22:09.589995+00:00",
+        "https://anime.bang-dream.com/mygo/news/post-25/": "2026-10-21T10:22:09.590002+00:00"
+      },
+      "url_watch_v07_initialized": true
     },
     "Ave Mujica アニメ": {
       "initialized": true,
@@ -494,7 +613,19 @@
           "hash": null,
           "first_seen": "2026-10-20T11:47:57.021624+00:00"
         }
-      }
+      },
+      "observed_v07": {
+        "https://anime.bang-dream.com/avemujica/news/post-17/": "2026-10-21T10:22:10.120467+00:00",
+        "https://anime.bang-dream.com/avemujica/news/post-15/": "2026-10-21T10:22:10.120482+00:00",
+        "https://anime.bang-dream.com/avemujica/news/post-14/": "2026-10-21T10:22:10.120486+00:00",
+        "https://anime.bang-dream.com/avemujica/news/post-13/": "2026-10-21T10:22:10.120490+00:00",
+        "https://anime.bang-dream.com/avemujica/news/post-12-2/": "2026-10-21T10:22:10.120494+00:00",
+        "https://anime.bang-dream.com/avemujica/news/post-12/": "2026-10-21T10:22:10.120499+00:00",
+        "https://anime.bang-dream.com/avemujica/news/post-10/": "2026-10-21T10:22:10.120503+00:00",
+        "https://anime.bang-dream.com/avemujica/news/post-8/": "2026-10-21T10:22:10.120507+00:00",
+        "https://anime.bang-dream.com/avemujica/news/post-7/": "2026-10-21T10:22:10.120510+00:00"
+      },
+      "url_watch_v07_initialized": true
     },
     "Ave Mujica 劇場版": {
       "initialized": true,
@@ -535,7 +666,19 @@
           "hash": "out_of_window",
           "first_seen": "2026-10-20T11:47:58.287141+00:00"
         }
-      }
+      },
+      "observed_v07": {
+        "https://avemujica-movie.bang-dream.com/news/post-10/": "2026-10-21T10:22:10.976845+00:00",
+        "https://avemujica-movie.bang-dream.com/news/post-8/": "2026-10-21T10:22:10.976864+00:00",
+        "https://avemujica-movie.bang-dream.com/news/post-7/": "2026-10-21T10:22:10.976869+00:00",
+        "https://avemujica-movie.bang-dream.com/news/post-6/": "2026-10-21T10:22:10.976874+00:00",
+        "https://avemujica-movie.bang-dream.com/news/post-5/": "2026-10-21T10:22:10.976879+00:00",
+        "https://avemujica-movie.bang-dream.com/news/post-4/": "2026-10-21T10:22:10.976884+00:00",
+        "https://avemujica-movie.bang-dream.com/news/post-3/": "2026-10-21T10:22:10.976888+00:00",
+        "https://avemujica-movie.bang-dream.com/news/post-2/": "2026-10-21T10:22:10.976892+00:00",
+        "https://avemujica-movie.bang-dream.com/news/post-1/": "2026-10-21T10:22:10.976907+00:00"
+      },
+      "url_watch_v07_initialized": true
     },
     "ブシロードミュージック お知らせ（関連情報）": {
       "initialized": true,
@@ -580,7 +723,109 @@
           "hash": null,
           "first_seen": "2026-10-20T13:44:36.129627+00:00"
         }
-      }
+      },
+      "observed_v07": {
+        "https://bushiroad-music.com/news/22964/": "2026-10-21T10:22:11.953114+00:00",
+        "https://bushiroad-music.com/news/22877/": "2026-10-21T10:22:11.953133+00:00",
+        "https://bushiroad-music.com/news/22430/": "2026-10-21T10:22:11.953138+00:00",
+        "https://bushiroad-music.com/news/22109/": "2026-10-21T10:22:11.953143+00:00",
+        "https://bushiroad-music.com/news/21905/": "2026-10-21T10:22:11.953148+00:00",
+        "https://bushiroad-music.com/news/21876/": "2026-10-21T10:22:11.953152+00:00",
+        "https://bushiroad-music.com/news/19583/": "2026-10-21T10:22:11.953156+00:00",
+        "https://bushiroad-music.com/news/321/": "2026-10-21T10:22:11.953161+00:00",
+        "https://bushiroad-music.com/news/20656/": "2026-10-21T10:22:11.953165+00:00",
+        "https://bushiroad-music.com/news/20580/": "2026-10-21T10:22:11.953169+00:00"
+      },
+      "url_watch_v07_initialized": true
+    },
+    "MyGO!!!!! × Ave Mujica 続編": {
+      "initialized": true,
+      "seen": {
+        "https://anime.bang-dream.com/mygo-avemujica/news/post-1/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:22:14.352733+00:00"
+        }
+      },
+      "observed_v07": {
+        "https://anime.bang-dream.com/mygo-avemujica/news/post-1/": "2026-10-21T10:22:14.352719+00:00"
+      },
+      "url_watch_v07_initialized": true
+    },
+    "Our Notes 公式": {
+      "initialized": true,
+      "seen": {
+        "https://bang-dream-on.bushimo.jp/news/post-7/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:22:16.700385+00:00"
+        },
+        "https://bang-dream-on.bushimo.jp/news/post-11/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:22:16.700391+00:00"
+        },
+        "https://bang-dream-on.bushimo.jp/news/post-10/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:22:16.700396+00:00"
+        }
+      },
+      "observed_v07": {
+        "https://bang-dream-on.bushimo.jp/news/post-7/": "2026-10-21T10:22:16.700372+00:00",
+        "https://bang-dream-on.bushimo.jp/news/post-11/": "2026-10-21T10:22:16.700389+00:00",
+        "https://bang-dream-on.bushimo.jp/news/post-10/": "2026-10-21T10:22:16.700393+00:00"
+      },
+      "url_watch_v07_initialized": true
+    },
+    "ブシロード公式": {
+      "initialized": false,
+      "seen": {},
+      "observed_v07": {}
+    },
+    "サンジゲン": {
+      "initialized": true,
+      "seen": {
+        "https://www.sanzigen.co.jp/news/20250907.html/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:22:20.522781+00:00"
+        }
+      },
+      "observed_v07": {
+        "https://www.sanzigen.co.jp/news/20250907.html/": "2026-10-21T10:22:20.522759+00:00"
+      },
+      "url_watch_v07_initialized": true
+    },
+    "ブシロードオンラインストア": {
+      "initialized": false,
+      "seen": {},
+      "observed_v07": {}
+    },
+    "PR TIMES": {
+      "initialized": false,
+      "seen": {},
+      "observed_v07": {}
+    },
+    "音楽ナタリー": {
+      "initialized": false,
+      "seen": {},
+      "observed_v07": {}
+    },
+    "4Gamer": {
+      "initialized": false,
+      "seen": {},
+      "observed_v07": {}
+    },
+    "電撃オンライン": {
+      "initialized": false,
+      "seen": {},
+      "observed_v07": {}
+    },
+    "アニメ！アニメ！": {
+      "initialized": false,
+      "seen": {},
+      "observed_v07": {}
+    },
+    "GAME Watch": {
+      "initialized": false,
+      "seen": {},
+      "observed_v07": {}
     }
   },
   "global_sent": {
@@ -613,5 +858,6 @@
   },
   "daily_posts": {
     "2026-10-21": 1
-  }
+  },
+  "pending_v07": {}
 }
