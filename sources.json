@@ -87,10 +87,10 @@
   },
   {
     "name": "ブシロード公式",
-    "url": "https://bushiroad.com/",
-    "article_pattern": "/(news|information|topics|info|posts|articles)/[^/]+/?$|/news[^/]*\\.html$",
+    "url": "https://bushiroad.com/snscontents",
+    "article_pattern": "/(?:snscontents|news|topics|information)/[^/?#]+/?$",
     "enabled": true,
-    "discovery": "hybrid",
+    "discovery": "html",
     "detect_updates": false,
     "filter_related": true,
     "search_terms": [
@@ -98,9 +98,8 @@
       "BanG Dream",
       "MyGO Ave Mujica"
     ],
-    "search_pages": [
-      "https://bushiroad.com/news"
-    ]
+    "search_pages": [],
+    "additional_list_pages": []
   },
   {
     "name": "サンジゲン",
@@ -133,7 +132,12 @@
     "search_pages": [
       "https://bushiroad-store.com/search?q=BanG%20Dream",
       "https://bushiroad-store.com/search?q=MyGO",
-      "https://bushiroad-store.com/search?q=Ave%20Mujica"
+      "https://bushiroad-store.com/search?q=Ave%20Mujica",
+      "https://bushiroad-store.com/search?q=Roselia"
+    ],
+    "note": "Public collection and search pages only. If password protected, no product URLs can be fetched. Undated products are excluded to avoid old-stock notifications.",
+    "additional_list_pages": [
+      "https://bushiroad-store.com/collections/all"
     ]
   },
   {
@@ -154,7 +158,7 @@
     "name": "音楽ナタリー",
     "url": "https://natalie.mu/",
     "article_pattern": "/music/news/[0-9]+/?$",
-    "enabled": true,
+    "enabled": false,
     "discovery": "hybrid",
     "detect_updates": false,
     "filter_related": true,
@@ -171,7 +175,7 @@
     "name": "4Gamer",
     "url": "https://www.4gamer.net/",
     "article_pattern": "/games/\\d+/[^/]+/\\d{8}[^/]*\\.html$|/games/\\d+/[^/]+/[^/]+\\.html$",
-    "enabled": true,
+    "enabled": false,
     "discovery": "hybrid",
     "detect_updates": false,
     "filter_related": true,
