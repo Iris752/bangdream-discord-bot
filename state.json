@@ -1137,6 +1137,26 @@
         "https://prtimes.jp/main/html/rd/p/000000547.000098210.html": {
           "hash": null,
           "first_seen": "2026-10-21T14:25:39.147740+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000001364.000012754.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T15:00:41.144920+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000191.000052030.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T15:00:41.144981+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000584.000055282.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T15:00:41.145065+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000001645.000073077.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T15:00:41.145138+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000067.000182800.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T15:00:41.145213+00:00"
         }
       },
       "observed_v07": {
@@ -1220,7 +1240,12 @@
         "https://prtimes.jp/main/html/rd/p/000000007.000181157.html": "2026-10-21T13:33:06.878873+00:00",
         "https://prtimes.jp/main/html/rd/p/000000994.000025517.html": "2026-10-21T14:25:39.147517+00:00",
         "https://prtimes.jp/main/html/rd/p/000000385.000012100.html": "2026-10-21T14:25:39.147652+00:00",
-        "https://prtimes.jp/main/html/rd/p/000000547.000098210.html": "2026-10-21T14:25:39.147693+00:00"
+        "https://prtimes.jp/main/html/rd/p/000000547.000098210.html": "2026-10-21T14:25:39.147693+00:00",
+        "https://prtimes.jp/main/html/rd/p/000001364.000012754.html": "2026-10-21T15:00:41.144803+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000191.000052030.html": "2026-10-21T15:00:41.144928+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000584.000055282.html": "2026-10-21T15:00:41.144988+00:00",
+        "https://prtimes.jp/main/html/rd/p/000001645.000073077.html": "2026-10-21T15:00:41.145072+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000067.000182800.html": "2026-10-21T15:00:41.145149+00:00"
       },
       "url_watch_v07_initialized": true,
       "recent_backfill_v11_done": true
@@ -2305,6 +2330,14 @@
         "https://game.watch.impress.co.jp/docs/news/2147420.html": {
           "hash": null,
           "first_seen": "2026-10-21T10:33:17.137214+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149046.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T15:00:45.466611+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2148825.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T15:00:45.466671+00:00"
         }
       },
       "observed_v07": {
@@ -2382,7 +2415,9 @@
         "https://game.watch.impress.co.jp/docs/news/2149091.html": "2026-10-21T10:33:17.137196+00:00",
         "https://game.watch.impress.co.jp/docs/news/2147700.html": "2026-10-21T10:33:17.137200+00:00",
         "https://game.watch.impress.co.jp/docs/news/2147639.html": "2026-10-21T10:33:17.137203+00:00",
-        "https://game.watch.impress.co.jp/docs/news/2147420.html": "2026-10-21T10:33:17.137207+00:00"
+        "https://game.watch.impress.co.jp/docs/news/2147420.html": "2026-10-21T10:33:17.137207+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149046.html": "2026-10-21T15:00:45.466486+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2148825.html": "2026-10-21T15:00:45.466620+00:00"
       },
       "url_watch_v07_initialized": true,
       "recent_backfill_v11_done": true
@@ -2417,9 +2452,7 @@
     "https://avemujica-movie.bang-dream.com/news/post-10/": "15e3465d15bb2cfb03b38b37ab72f24c216d704e660f5f822a0295b095f0f114",
     "https://prtimes.jp/main/html/rd/p/000000004.000170911.html": "04bcb9a9fc98098efeafb47f67c9a3d9a6b1ebdf8dec24e0dab0bf5004e76d3c"
   },
-  "daily_posts": {
-    "2026-10-21": 2
-  },
+  "daily_posts": {},
   "pending_v07": {},
   "url_watch_v07_initialized": true
 }
