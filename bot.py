@@ -9,7 +9,7 @@ import time
 from datetime import datetime, timezone, timedelta
 from zoneinfo import ZoneInfo
 from pathlib import Path
-from urllib.parse import urljoin, urlparse, urldefrag, parse_qsl, urlencode, urlunparse
+from urllib.parse import urljoin, urlparse, urldefrag, parse_qsl, urlencode, urlunparse, quote
 
 import requests
 from bs4 import BeautifulSoup
@@ -24,11 +24,10 @@ TIMEOUT = 20
 MAX_PER_SOURCE = 25
 MAX_POSTS_PER_RUN = 5
 MAX_POSTS_PER_DAY = 24
-MAX_ARTICLE_AGE_DAYS = 14
 MAX_SEEN = 12000
+MAX_AGE_DAYS = 7
+UNKNOWN_DATE_TOP_N = 3  # Unknown dates: only brand-new URLs near the top of a listing
 JST = ZoneInfo("Asia/Tokyo")
-BACKFILL_START = datetime(2026, 10, 20, tzinfo=JST).astimezone(timezone.utc)
-BACKFILL_KEY = "backfill_since_2026_10_20_v1"
 # Include project-wide stories even if no band is named. Apply filtering only to general corporate feeds.
 RELATED = ('bang dream', 'bangdream', 'バンドリ', 'ガルパ', 'mygo', 'ave mujica', 'roselia',
            'poppin', 'afterglow', 'pastel', 'morfonica', 'raise a suilen', 'ハロー、ハッピー',
@@ -79,19 +78,53 @@ def article_link(url, source):
 
 
 def discover(source):
-    found = []
-    visited = set()
-    # Listing pagination must be configured explicitly; no guessing arbitrary URLs.
-    for listing in [source['url']] + source.get('additional_list_pages', []):
-        soup = fetch(listing)
-        for a in soup.select('a[href]'):
-            u = canonical(urljoin(listing, a['href']))
-            if u not in visited and article_link(u, source):
-                visited.add(u)
-                found.append(u)
-        time.sleep(0.3)
+    """Discover URLs via original HTML lists and/or domain-restricted Bing RSS search.
+
+    Search results are supplementary and may be delayed or incomplete. Never treat
+    search result rank or feed timestamps as proof of an article's publication date.
+    """
+    found, visited, failures = [], set(), []
+    mode = source.get('discovery', 'html')
+    if mode in ('html', 'hybrid'):
+        for listing in [source['url']] + source.get('additional_list_pages', []):
+            try:
+                soup = fetch(listing)
+                for a in soup.select('a[href]'):
+                    u = canonical(urljoin(listing, a['href']))
+                    if u not in visited and article_link(u, source):
+                        visited.add(u)
+                        found.append(u)
+            except Exception as exc:
+                failures.append(f'HTML {listing}: {exc}')
+            time.sleep(0.2)
+    if mode in ('search_rss', 'hybrid'):
+        domain = urlparse(source['url']).netloc
+        # Multiple focused queries are safer than broad crawling of huge news sites.
+        for phrase in source.get('search_terms', ['バンドリ', 'BanG Dream']):
+            query = f'site:{domain} {phrase}'
+            endpoint = 'https://www.bing.com/search?format=rss&q=' + quote(query)
+            try:
+                response = SESSION.get(endpoint, timeout=TIMEOUT)
+                response.raise_for_status()
+                feed = BeautifulSoup(response.content, 'xml')
+                items = feed.select('item')
+                if not items:
+                    failures.append(f'RSS returned zero items for {query}')
+                for item in items:
+                    link = item.find('link')
+                    if not link:
+                        continue
+                    u = canonical(link.get_text(strip=True))
+                    if u not in visited and article_link(u, source):
+                        visited.add(u)
+                        found.append(u)
+            except Exception as exc:
+                failures.append(f'RSS {query}: {exc}')
+            time.sleep(0.3)
     if not found:
-        raise RuntimeError('No article URLs discovered; check selector, page and article_pattern')
+        raise RuntimeError('No article URLs discovered; ' + '; '.join(failures[:3]))
+    if failures:
+        LOG.warning('%s: partial discovery failures: %s', source['name'], '; '.join(failures[:2]))
     return found
 
 
@@ -162,65 +195,61 @@ def parse_publication_value(value):
 
 
 def publication_date(url):
-    """Use article-specific metadata and publication labels, not event dates."""
+    """Best-effort original publication date; never substitute crawl or update time."""
     soup = fetch(url)
     values = []
-    selectors = (
-        'meta[property="article:published_time"]',
-        'meta[name="date"]', 'meta[name="pubdate"]',
-        'meta[itemprop="datePublished"]', 'meta[property="datePublished"]',
-        'meta[name="datePublished"]', 'meta[name="DC.date.issued"]',
-        'meta[name="dc.date"]', 'time[datetime]',
-        'time[pubdate]', '[itemprop="datePublished"]',
-    )
-    for selector in selectors:
-        for node in soup.select(selector):
-            value = node.get('content') or node.get('datetime') or node.get_text(' ', strip=True)
-            if value:
-                values.append((selector, value))
+    for selector in (
+        'meta[property="article:published_time"]', 'meta[name="pubdate"]',
+        'meta[name="date"]', 'meta[itemprop="datePublished"]',
+        'meta[property="datePublished"]', 'meta[name="datePublished"]',
+        'time[datetime]', '[itemprop="datePublished"][datetime]',
+        '.news-date', '.news_date', '.entry-date', '.post-date',
+        '.publish-date', '.published', '.article-date', '.date',
+    ):
+        for node in soup.select(selector)[:5]:
+            val = node.get('content') or node.get('datetime') or node.get_text(' ', strip=True)
+            if val:
+                values.append(val)
     for node in soup.select('script[type="application/ld+json"]'):
         try:
             data = json.loads(node.string or node.get_text())
-            queue = [data]
-            while queue:
-                item = queue.pop()
-                if isinstance(item, list):
-                    queue.extend(item)
-                elif isinstance(item, dict):
-                    if item.get('datePublished'):
-                        values.append(('jsonld.datePublished', item['datePublished']))
-                    queue.extend(v for v in item.values() if isinstance(v, (dict, list)))
         except (ValueError, TypeError):
             continue
-    # Date shown near the article heading, not dates of concerts/ticket sales in body.
-    for selector in (
-        'article .date', 'article .news-date', 'article .news_date',
-        'article .post-date', 'article .published', 'article time',
-        '.news-detail .date', '.news_detail .date',
-        '.newsDetail .date', '.newsDetail__date', '.news-detail__date',
-        '.news-date', '.news_date', '.post-date', '.publish-date',
-        '.published-date', '.entry-date', '.article-date',
-        '.news__date', '.news-detail__head time',
-    ):
-        for node in soup.select(selector)[:5]:
-            value = node.get('datetime') or node.get('content') or node.get_text(' ', strip=True)
-            if value:
-                values.append((selector, value))
-    # Date-bearing URL path is used only when it is unambiguously YYYYMMDD.
-    match = re.search(r'/(20\d{2})(\d{2})(\d{2})(?:/|$)', urlparse(url).path)
-    if match:
-        values.append(('url', '-'.join(match.groups())))
-    for origin, value in values:
-        dt = parse_publication_value(value)
-        if dt:
-            LOG.debug('Publication date via %s: %s => %s', origin, url, dt.isoformat())
-            return dt
-    LOG.info('No publication date in supported fields: %s', url)
+        stack = [data]
+        while stack:
+            obj = stack.pop()
+            if isinstance(obj, list):
+                stack.extend(obj)
+            elif isinstance(obj, dict):
+                if obj.get('datePublished'):
+                    values.append(obj['datePublished'])
+                stack.extend(v for v in obj.values() if isinstance(v, (dict, list)))
+    # Read only date-like elements near the article heading; do not scrape event dates
+    # from the article body and mistake them for publication dates.
+    for heading in soup.select('h1')[:2]:
+        for node in list(heading.previous_elements)[:12] + list(heading.next_elements)[:12]:
+            if getattr(node, 'name', None) in ('time', 'span', 'small'):
+                cls = ' '.join(node.get('class', [])).lower()
+                if 'date' in cls or 'time' in cls or 'publish' in cls:
+                    values.append(node.get_text(' ', strip=True))
+    # Some official URLs encode YYYYMMDD.
+    m = re.search(r'/(20\d{2})(\d{2})(\d{2})(?:/|$)', url)
+    if m:
+        values.append('-'.join(m.groups()))
+    for value in values:
+        date = parse_publication_value(value)
+        if date:
+            return date
     return None
 
 
-def in_window(date):
-    return date is not None and date >= BACKFILL_START and timedelta(0) <= datetime.now(timezone.utc) - date <= timedelta(days=MAX_ARTICLE_AGE_DAYS)
+def publication_status(date):
+    if date is None:
+        return 'unknown'
+    delta = datetime.now(timezone.utc) - date
+    if delta < timedelta(hours=-2):
+        return 'future'
+    return 'recent' if delta <= timedelta(days=MAX_AGE_DAYS) else 'old'
 
 
 def quota_available(state):
@@ -284,6 +313,7 @@ def send_article(webhook, source, title, summary, url, update=False):
 
 
 def run():
+    """Detect new URLs; prefer publication date and cautiously handle undated pages."""
     webhook = os.getenv('BANGDREAM_DISCORD_WEBHOOK_URL', '').strip()
     if not webhook:
         raise RuntimeError('Set BANGDREAM_DISCORD_WEBHOOK_URL in GitHub Secrets')
@@ -291,112 +321,116 @@ def run():
     state = json.loads(STATE.read_text(encoding='utf-8')) if STATE.exists() else {'sources': {}, 'global_sent': {}}
     state.setdefault('sources', {})
     state.setdefault('global_sent', {})
-    # Old global URL entries remain valid after upgrading from v02.
-    # A one-time backfill rechecks baseline-only URLs without resetting the state.
-    # Only a successful Discord post counts as sent.
-    backfill = not state.get(BACKFILL_KEY, False)
-    backfill_remaining = False
-    stats = {'new_urls': 0, 'backfill_candidates': 0, 'sent': 0, 'already_sent': 0, 'old': 0, 'undated': 0, 'deferred': 0, 'filtered': 0}
+    state.setdefault('pending_v07', {})
+    # New detection mode intentionally does NOT backfill older v0.5/v0.6 candidates.
+    # A one-time baseline records all currently visible URLs as observed.
+    migration = not state.get('url_watch_v07_initialized', False)
+    stats = {'discovered': 0, 'new_urls': 0, 'queued': 0, 'sent': 0,
+             'filtered': 0, 'deferred': 0, 'baseline': 0, 'errors': 0,
+             'old': 0, 'undated_skipped': 0, 'undated_sent': 0, 'recent': 0}
     errors = []
     state['_posts_this_run'] = 0
+    enabled = {s['name']: s for s in sources if s.get('enabled', False)}
+    all_scanned = True
     for source in sources:
         if not source.get('enabled', False):
             continue
         name = source['name']
-        previous = state['sources'].get(name, {'initialized': False, 'seen': {}})
+        previous = state['sources'].setdefault(name, {'initialized': False, 'seen': {}})
         seen = previous.setdefault('seen', {})
+        # Separate URL observation history from v0.6's hash / date states.
+        observed = previous.setdefault('observed_v07', {})
         try:
             links = discover(source)
+            stats['discovered'] += len(links)
             LOG.info('%s: %d links', name, len(links))
-            if not previous.get('initialized'):
-                # New sources are baselined without mass posting; existing source
-                # baselines can be rechecked during the one-time 10/20 backfill.
-                for link in links:
-                    seen.setdefault(link, {'hash': None, 'first_seen': now()})
-                previous['initialized'] = True
-                LOG.info('%s: baseline created (%d)', name, len(links))
-            else:
-                pending = [link for link in links if link not in seen or (seen[link].get('hash') is None and link not in state['global_sent'])]
-                stats['new_urls'] += len(pending)
-                baseline_only = [link for link in links if link in seen and seen[link].get('hash') in (None, 'out_of_window') and link not in state['global_sent']]
-                candidates = list(dict.fromkeys((baseline_only if backfill else []) + pending))
-                stats['backfill_candidates'] += len(baseline_only) if backfill else 0
-                # Listing order is generally newest first; process in that order.
-                for link in candidates[:MAX_PER_SOURCE]:
-                    try:
-                        if link in state['global_sent']:
-                            seen.setdefault(link, {'first_seen': now()})['hash'] = state['global_sent'][link]
-                            stats['already_sent'] += 1
-                            continue
-                        published = publication_date(link)
-                        if published is None:
-                            stats['undated'] += 1
-                            # Do not mark as sent or discard; retry on future runs.
-                            LOG.info('Date unavailable (retry later): %s', link)
-                            continue
-                        if not in_window(published):
-                            stats['old'] += 1
-                            seen.setdefault(link, {'first_seen': now()})['hash'] = 'out_of_window'
-                            continue
-                        if not can_post(state):
-                            stats['deferred'] += 1
-                            backfill_remaining = True
-                            LOG.info('Notification quota reached; defer %s', link)
-                            continue
-                        title, summary = extract(link)
-                        digest = hashlib.sha256((title + '\n' + summary).encode()).hexdigest()
-                        if not relevant(title, summary, source):
-                            seen.setdefault(link, {'first_seen': now()})['hash'] = 'filtered'
-                            stats['filtered'] += 1
-                            continue
-                        send_article(webhook, name, title, summary, link)
-                        state['global_sent'][link] = digest
-                        seen[link] = {'hash': digest, 'first_seen': now()}
-                        count_post(state)
-                        stats['sent'] += 1
-                        LOG.info('Sent %s', link)
-                    except Exception as exc:
-                        backfill_remaining = True
-                        errors.append(f'{name}: article {link}: {exc}')
-                if len(candidates) > MAX_PER_SOURCE:
-                    backfill_remaining = True
-                # Update detection only for articles actually sent before.
-                if source.get('detect_updates', True):
-                    for link in links[:10]:
-                        old = seen.get(link, {})
-                        if link not in state['global_sent'] or not old.get('hash') or old['hash'] in ('filtered', 'out_of_window'):
-                            continue
-                        try:
-                            if not in_window(publication_date(link)) or not can_post(state):
-                                continue
-                            title, summary = extract(link)
-                            digest = hashlib.sha256((title + '\n' + summary).encode()).hexdigest()
-                            if digest != state['global_sent'][link] and relevant(title, summary, source):
-                                send_article(webhook, name, title, summary, link, update=True)
-                                count_post(state)
-                                stats['sent'] += 1
-                                old['hash'] = digest
-                                state['global_sent'][link] = digest
-                        except Exception as exc:
-                            errors.append(f'{name}: update {link}: {exc}')
-                        time.sleep(0.3)
+            initial = not previous.get('url_watch_v07_initialized', False)
+            for position, link in enumerate(links):
+                if link not in observed:
+                    observed[link] = now()
+                    if initial:
+                        stats['baseline'] += 1
+                    elif link not in state['global_sent'] and link not in state['pending_v07']:
+                        state['pending_v07'][link] = {'source': name, 'first_seen': now(), 'listing_position': position, 'first_discovery': True}
+                        stats['new_urls'] += 1
+                        LOG.info('New URL queued: %s', link)
+                seen.setdefault(link, {'hash': None, 'first_seen': now()})
+            previous['url_watch_v07_initialized'] = True
+            previous['initialized'] = True
+            if len(observed) > MAX_SEEN:
+                previous['observed_v07'] = dict(list(observed.items())[-MAX_SEEN:])
             if len(seen) > MAX_SEEN:
                 previous['seen'] = dict(list(seen.items())[-MAX_SEEN:])
-            state['sources'][name] = previous
         except Exception as exc:
+            all_scanned = False
             errors.append(f'{name}: listing: {exc}')
-    LOG.info('Notifications this run: %d/%d; today (JST): %d/%d', state['_posts_this_run'], MAX_POSTS_PER_RUN, state.get('daily_posts', {}).get(datetime.now(JST).date().isoformat(), 0), MAX_POSTS_PER_DAY)
+            LOG.error('%s: listing failed: %s', name, exc)
+    if migration and all_scanned:
+        state['url_watch_v07_initialized'] = True
+        LOG.info('URL-based monitoring baseline established; no historical articles sent')
+    elif migration:
+        LOG.warning('Migration incomplete: retry baseline for failed sources')
+    # A pending URL remains pending until successful Discord delivery or filtering.
+    # Work through the queue oldest-first; do not let quota or one failing URL erase it.
+    for link, item in sorted(list(state['pending_v07'].items()), key=lambda pair: pair[1].get('first_seen', '')):
+        if link in state['global_sent']:
+            del state['pending_v07'][link]
+            continue
+        if not can_post(state):
+            stats['deferred'] += 1
+            continue
+        name = item.get('source', '')
+        source = enabled.get(name)
+        if source is None:
+            # Keep pending in case the source is enabled again.
+            continue
+        try:
+            published = publication_date(link)
+            status = publication_status(published)
+            if status in ('old', 'future'):
+                stats['old'] += 1
+                LOG.info('Skipped %s published=%s: %s', status, published, link)
+                del state['pending_v07'][link]
+                continue
+            if status == 'unknown':
+                # An old page first encountered deep in a listing is NOT trustworthy
+                # evidence of a new publication. Only genuinely newly observed top links
+                # qualify, and never the v0.7 migration baseline.
+                if (source.get('discovery') == 'search_rss' or not item.get('first_discovery') or item.get('listing_position', 9999) >= UNKNOWN_DATE_TOP_N):
+                    stats['undated_skipped'] += 1
+                    LOG.info('Undated, insufficient evidence; skipped: %s', link)
+                    del state['pending_v07'][link]
+                    continue
+                stats['undated_sent'] += 1
+                LOG.info('Undated, new top-of-list URL (provisional): %s', link)
+            else:
+                stats['recent'] += 1
+            title, summary = extract(link)
+            if not relevant(title, summary, source):
+                stats['filtered'] += 1
+                del state['pending_v07'][link]
+                continue
+            digest = hashlib.sha256((title + '\n' + summary).encode()).hexdigest()
+            send_article(webhook, name, title, summary, link)
+            state['global_sent'][link] = digest
+            seen = state['sources'][name].setdefault('seen', {})
+            seen[link] = {'hash': digest, 'first_seen': item.get('first_seen', now())}
+            count_post(state)
+            stats['sent'] += 1
+            del state['pending_v07'][link]
+            LOG.info('Sent %s', link)
+        except Exception as exc:
+            errors.append(f'{name}: article {link}: {exc}')
+            LOG.error('Pending article failed (will retry): %s: %s', link, exc)
+    stats['queued'] = len(state['pending_v07'])
+    stats['errors'] = len(errors)
+    LOG.info('Notifications this run: %d/%d; today (JST): %d/%d',
+             state['_posts_this_run'], MAX_POSTS_PER_RUN,
+             state.get('daily_posts', {}).get(datetime.now(JST).date().isoformat(), 0), MAX_POSTS_PER_DAY)
     LOG.info('Diagnostics: %s', json.dumps(stats, ensure_ascii=False))
-    if backfill and not backfill_remaining and not errors:
-        state[BACKFILL_KEY] = True
-        LOG.info('Backfill complete; one-time recheck disabled')
-    elif backfill:
-        LOG.info('Backfill remains active for deferred/error items')
     del state['_posts_this_run']
     STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     if errors:
-        for error in errors:
-            LOG.error(error)
         raise RuntimeError(f'{len(errors)} source/article errors; see logs. Successful state saved.')
 
 
