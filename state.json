@@ -785,10 +785,15 @@
         "https://www.sanzigen.co.jp/news/20250907.html/": {
           "hash": null,
           "first_seen": "2026-10-21T10:22:20.522781+00:00"
+        },
+        "https://www.sanzigen.co.jp/news/20250907.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:30:18.070832+00:00"
         }
       },
       "observed_v07": {
-        "https://www.sanzigen.co.jp/news/20250907.html/": "2026-10-21T10:22:20.522759+00:00"
+        "https://www.sanzigen.co.jp/news/20250907.html/": "2026-10-21T10:22:20.522759+00:00",
+        "https://www.sanzigen.co.jp/news/20250907.html": "2026-10-21T10:30:18.070685+00:00"
       },
       "url_watch_v07_initialized": true
     },
@@ -798,9 +803,242 @@
       "observed_v07": {}
     },
     "PR TIMES": {
-      "initialized": false,
-      "seen": {},
-      "observed_v07": {}
+      "initialized": true,
+      "seen": {
+        "https://prtimes.jp/main/html/rd/p/000001660.000030865.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137893+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000653.000040747.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137900+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000192.000032312.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137904+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000038.000176419.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137908+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000002917.000011305.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137912+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000002.000193261.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137917+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000003908.000025615.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137921+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000036.000167378.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137925+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000079.000105097.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137929+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000001790.000108051.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137933+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000001788.000108051.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137939+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000005166.000003670.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137943+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000055.000079676.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137947+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000009.000151480.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137952+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000174.000006954.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137956+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000302.000110808.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137960+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000009.000179484.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137964+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000557.000040769.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137969+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000003907.000025615.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137973+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000283.000025081.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137984+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000260.000112458.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.137994+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000249.000078115.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138003+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000002349.000016719.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138013+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000367.000048489.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138022+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000027.000161544.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138029+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000001681.000099047.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138082+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000148.000180015.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138090+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000009819.000014827.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138098+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000674.000050979.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138106+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000008986.000001355.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138113+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000001958.000055377.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138123+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000198.000039336.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138132+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000205.000069446.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138141+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000107.000010521.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138150+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000317.000130377.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138158+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000248.000078115.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138166+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000025.000179732.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138174+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000003562.000006568.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138181+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000003082.000021078.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138189+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000075.000174612.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138197+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000003014.000021078.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138204+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000080.000067392.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138213+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000002.000173993.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138223+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000155.000162689.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138232+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000285.000078233.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138240+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000098.000084554.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:31:04.138247+00:00"
+        }
+      },
+      "observed_v07": {
+        "https://prtimes.jp/main/html/rd/p/000001660.000030865.html": "2026-10-21T10:31:04.137873+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000653.000040747.html": "2026-10-21T10:31:04.137897+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000192.000032312.html": "2026-10-21T10:31:04.137902+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000038.000176419.html": "2026-10-21T10:31:04.137906+00:00",
+        "https://prtimes.jp/main/html/rd/p/000002917.000011305.html": "2026-10-21T10:31:04.137910+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000002.000193261.html": "2026-10-21T10:31:04.137914+00:00",
+        "https://prtimes.jp/main/html/rd/p/000003908.000025615.html": "2026-10-21T10:31:04.137919+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000036.000167378.html": "2026-10-21T10:31:04.137923+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000079.000105097.html": "2026-10-21T10:31:04.137927+00:00",
+        "https://prtimes.jp/main/html/rd/p/000001790.000108051.html": "2026-10-21T10:31:04.137932+00:00",
+        "https://prtimes.jp/main/html/rd/p/000001788.000108051.html": "2026-10-21T10:31:04.137936+00:00",
+        "https://prtimes.jp/main/html/rd/p/000005166.000003670.html": "2026-10-21T10:31:04.137941+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000055.000079676.html": "2026-10-21T10:31:04.137945+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000009.000151480.html": "2026-10-21T10:31:04.137950+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000174.000006954.html": "2026-10-21T10:31:04.137954+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000302.000110808.html": "2026-10-21T10:31:04.137958+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000009.000179484.html": "2026-10-21T10:31:04.137962+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000557.000040769.html": "2026-10-21T10:31:04.137967+00:00",
+        "https://prtimes.jp/main/html/rd/p/000003907.000025615.html": "2026-10-21T10:31:04.137971+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000283.000025081.html": "2026-10-21T10:31:04.137976+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000260.000112458.html": "2026-10-21T10:31:04.137990+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000249.000078115.html": "2026-10-21T10:31:04.137998+00:00",
+        "https://prtimes.jp/main/html/rd/p/000002349.000016719.html": "2026-10-21T10:31:04.138008+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000367.000048489.html": "2026-10-21T10:31:04.138018+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000027.000161544.html": "2026-10-21T10:31:04.138026+00:00",
+        "https://prtimes.jp/main/html/rd/p/000001681.000099047.html": "2026-10-21T10:31:04.138076+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000148.000180015.html": "2026-10-21T10:31:04.138087+00:00",
+        "https://prtimes.jp/main/html/rd/p/000009819.000014827.html": "2026-10-21T10:31:04.138094+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000674.000050979.html": "2026-10-21T10:31:04.138102+00:00",
+        "https://prtimes.jp/main/html/rd/p/000008986.000001355.html": "2026-10-21T10:31:04.138110+00:00",
+        "https://prtimes.jp/main/html/rd/p/000001958.000055377.html": "2026-10-21T10:31:04.138119+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000198.000039336.html": "2026-10-21T10:31:04.138127+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000205.000069446.html": "2026-10-21T10:31:04.138137+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000107.000010521.html": "2026-10-21T10:31:04.138146+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000317.000130377.html": "2026-10-21T10:31:04.138154+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000248.000078115.html": "2026-10-21T10:31:04.138162+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000025.000179732.html": "2026-10-21T10:31:04.138170+00:00",
+        "https://prtimes.jp/main/html/rd/p/000003562.000006568.html": "2026-10-21T10:31:04.138177+00:00",
+        "https://prtimes.jp/main/html/rd/p/000003082.000021078.html": "2026-10-21T10:31:04.138185+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000075.000174612.html": "2026-10-21T10:31:04.138193+00:00",
+        "https://prtimes.jp/main/html/rd/p/000003014.000021078.html": "2026-10-21T10:31:04.138201+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000080.000067392.html": "2026-10-21T10:31:04.138209+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000002.000173993.html": "2026-10-21T10:31:04.138217+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000155.000162689.html": "2026-10-21T10:31:04.138228+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000285.000078233.html": "2026-10-21T10:31:04.138236+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000098.000084554.html": "2026-10-21T10:31:04.138244+00:00"
+      },
+      "url_watch_v07_initialized": true
     },
     "音楽ナタリー": {
       "initialized": false,
@@ -813,19 +1051,1053 @@
       "observed_v07": {}
     },
     "電撃オンライン": {
-      "initialized": false,
-      "seen": {},
-      "observed_v07": {}
+      "initialized": true,
+      "seen": {
+        "https://dengekionline.com/article/202610/90663/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278385+00:00"
+        },
+        "https://dengekionline.com/article/202610/91622/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278395+00:00"
+        },
+        "https://dengekionline.com/article/202610/91613/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278402+00:00"
+        },
+        "https://dengekionline.com/article/202609/86027/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278409+00:00"
+        },
+        "https://dengekionline.com/article/202610/91617/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278417+00:00"
+        },
+        "https://dengekionline.com/article/202610/91612/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278425+00:00"
+        },
+        "https://dengekionline.com/article/202610/90830/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278434+00:00"
+        },
+        "https://dengekionline.com/article/202610/75477/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278442+00:00"
+        },
+        "https://dengekionline.com/article/202610/91611/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278451+00:00"
+        },
+        "https://dengekionline.com/article/202610/91592/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278456+00:00"
+        },
+        "https://dengekionline.com/article/202610/91610/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278461+00:00"
+        },
+        "https://dengekionline.com/article/202610/91442/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278466+00:00"
+        },
+        "https://dengekionline.com/article/202610/91577/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278478+00:00"
+        },
+        "https://dengekionline.com/article/202610/89574/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278486+00:00"
+        },
+        "https://dengekionline.com/article/202610/91601/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278494+00:00"
+        },
+        "https://dengekionline.com/article/202610/91595/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278502+00:00"
+        },
+        "https://dengekionline.com/article/202610/91589/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278509+00:00"
+        },
+        "https://dengekionline.com/article/202610/91546/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278516+00:00"
+        },
+        "https://dengekionline.com/article/202610/91575/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278524+00:00"
+        },
+        "https://dengekionline.com/article/202610/91587/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278532+00:00"
+        },
+        "https://dengekionline.com/article/202610/77866/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278540+00:00"
+        },
+        "https://dengekionline.com/article/202610/91591/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278549+00:00"
+        },
+        "https://dengekionline.com/article/202610/91585/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278554+00:00"
+        },
+        "https://dengekionline.com/article/202610/91579/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278558+00:00"
+        },
+        "https://dengekionline.com/article/202610/91574/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278577+00:00"
+        },
+        "https://dengekionline.com/article/202610/90658/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278581+00:00"
+        },
+        "https://dengekionline.com/article/202610/91570/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278585+00:00"
+        },
+        "https://dengekionline.com/article/202610/89061/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278589+00:00"
+        },
+        "https://dengekionline.com/article/202610/91559/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278593+00:00"
+        },
+        "https://dengekionline.com/article/202610/91171/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278598+00:00"
+        },
+        "https://dengekionline.com/article/202610/91535/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278601+00:00"
+        },
+        "https://dengekionline.com/article/202610/91537/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278605+00:00"
+        },
+        "https://dengekionline.com/article/202610/63838/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278609+00:00"
+        },
+        "https://dengekionline.com/article/202610/91558/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278614+00:00"
+        },
+        "https://dengekionline.com/article/202610/89304/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278618+00:00"
+        },
+        "https://dengekionline.com/article/202610/84169/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278622+00:00"
+        },
+        "https://dengekionline.com/article/202610/90685/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278626+00:00"
+        },
+        "https://dengekionline.com/article/202610/91518/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278630+00:00"
+        },
+        "https://dengekionline.com/article/202610/90440/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278634+00:00"
+        },
+        "https://dengekionline.com/article/202610/91514/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278638+00:00"
+        },
+        "https://dengekionline.com/article/202610/91557/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278642+00:00"
+        },
+        "https://dengekionline.com/article/202610/90021/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278646+00:00"
+        },
+        "https://dengekionline.com/article/202610/91507/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278652+00:00"
+        },
+        "https://dengekionline.com/article/202610/90811/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278657+00:00"
+        },
+        "https://dengekionline.com/article/202610/91533/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278661+00:00"
+        },
+        "https://dengekionline.com/nintendo/article/202610/91362/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278668+00:00"
+        },
+        "https://dengekionline.com/article/202610/91548/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278672+00:00"
+        },
+        "https://dengekionline.com/article/202610/91547/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278677+00:00"
+        },
+        "https://dengekionline.com/article/202610/89880/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278681+00:00"
+        },
+        "https://dengekionline.com/article/202610/90763/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278685+00:00"
+        },
+        "https://dengekionline.com/article/202610/91540/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278689+00:00"
+        },
+        "https://dengekionline.com/article/202610/91503/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278693+00:00"
+        },
+        "https://dengekionline.com/article/202610/91543/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278697+00:00"
+        },
+        "https://dengekionline.com/article/202610/91542/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278701+00:00"
+        },
+        "https://dengekionline.com/article/202610/91501/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278705+00:00"
+        },
+        "https://dengekionline.com/article/202610/90765/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278708+00:00"
+        },
+        "https://dengekionline.com/article/202610/91527/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278712+00:00"
+        },
+        "https://dengekionline.com/article/202610/91523/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278716+00:00"
+        },
+        "https://dengekionline.com/article/202610/87971/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278720+00:00"
+        },
+        "https://dengekionline.com/article/202610/91409/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278724+00:00"
+        },
+        "https://dengekionline.com/article/202610/91425/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278728+00:00"
+        },
+        "https://dengekionline.com/article/202610/91451/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278732+00:00"
+        },
+        "https://dengekionline.com/article/202610/91235/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278736+00:00"
+        },
+        "https://dengekionline.com/article/202610/91491/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278740+00:00"
+        },
+        "https://dengekionline.com/article/202610/91388/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278744+00:00"
+        },
+        "https://dengekionline.com/article/202610/63677/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278748+00:00"
+        },
+        "https://dengekionline.com/article/202610/91504/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278752+00:00"
+        },
+        "https://dengekionline.com/article/202610/90963/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278759+00:00"
+        },
+        "https://dengekionline.com/article/202610/91174/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278762+00:00"
+        },
+        "https://dengekionline.com/article/202610/91306/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278766+00:00"
+        },
+        "https://dengekionline.com/article/202610/74593/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278770+00:00"
+        },
+        "https://dengekionline.com/article/202610/91307/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278774+00:00"
+        },
+        "https://dengekionline.com/article/202610/91282/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278778+00:00"
+        },
+        "https://dengekionline.com/article/202610/91168/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278782+00:00"
+        },
+        "https://dengekionline.com/article/202610/91106/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278786+00:00"
+        },
+        "https://dengekionline.com/article/202610/91384/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278790+00:00"
+        },
+        "https://dengekionline.com/article/202610/91239/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278794+00:00"
+        },
+        "https://dengekionline.com/article/202610/90906/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278798+00:00"
+        },
+        "https://dengekionline.com/article/202610/90780/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278804+00:00"
+        },
+        "https://dengekionline.com/article/202610/91317/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278808+00:00"
+        },
+        "https://dengekionline.com/article/202610/90697/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278812+00:00"
+        },
+        "https://dengekionline.com/article/202610/91064/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:23.278816+00:00"
+        }
+      },
+      "observed_v07": {
+        "https://dengekionline.com/article/202610/90663/": "2026-10-21T10:32:23.278359+00:00",
+        "https://dengekionline.com/article/202610/91622/": "2026-10-21T10:32:23.278391+00:00",
+        "https://dengekionline.com/article/202610/91613/": "2026-10-21T10:32:23.278399+00:00",
+        "https://dengekionline.com/article/202609/86027/": "2026-10-21T10:32:23.278406+00:00",
+        "https://dengekionline.com/article/202610/91617/": "2026-10-21T10:32:23.278413+00:00",
+        "https://dengekionline.com/article/202610/91612/": "2026-10-21T10:32:23.278421+00:00",
+        "https://dengekionline.com/article/202610/90830/": "2026-10-21T10:32:23.278430+00:00",
+        "https://dengekionline.com/article/202610/75477/": "2026-10-21T10:32:23.278438+00:00",
+        "https://dengekionline.com/article/202610/91611/": "2026-10-21T10:32:23.278447+00:00",
+        "https://dengekionline.com/article/202610/91592/": "2026-10-21T10:32:23.278454+00:00",
+        "https://dengekionline.com/article/202610/91610/": "2026-10-21T10:32:23.278458+00:00",
+        "https://dengekionline.com/article/202610/91442/": "2026-10-21T10:32:23.278464+00:00",
+        "https://dengekionline.com/article/202610/91577/": "2026-10-21T10:32:23.278469+00:00",
+        "https://dengekionline.com/article/202610/89574/": "2026-10-21T10:32:23.278482+00:00",
+        "https://dengekionline.com/article/202610/91601/": "2026-10-21T10:32:23.278490+00:00",
+        "https://dengekionline.com/article/202610/91595/": "2026-10-21T10:32:23.278499+00:00",
+        "https://dengekionline.com/article/202610/91589/": "2026-10-21T10:32:23.278505+00:00",
+        "https://dengekionline.com/article/202610/91546/": "2026-10-21T10:32:23.278513+00:00",
+        "https://dengekionline.com/article/202610/91575/": "2026-10-21T10:32:23.278520+00:00",
+        "https://dengekionline.com/article/202610/91587/": "2026-10-21T10:32:23.278528+00:00",
+        "https://dengekionline.com/article/202610/77866/": "2026-10-21T10:32:23.278536+00:00",
+        "https://dengekionline.com/article/202610/91591/": "2026-10-21T10:32:23.278545+00:00",
+        "https://dengekionline.com/article/202610/91585/": "2026-10-21T10:32:23.278552+00:00",
+        "https://dengekionline.com/article/202610/91579/": "2026-10-21T10:32:23.278556+00:00",
+        "https://dengekionline.com/article/202610/91574/": "2026-10-21T10:32:23.278560+00:00",
+        "https://dengekionline.com/article/202610/90658/": "2026-10-21T10:32:23.278580+00:00",
+        "https://dengekionline.com/article/202610/91570/": "2026-10-21T10:32:23.278584+00:00",
+        "https://dengekionline.com/article/202610/89061/": "2026-10-21T10:32:23.278588+00:00",
+        "https://dengekionline.com/article/202610/91559/": "2026-10-21T10:32:23.278591+00:00",
+        "https://dengekionline.com/article/202610/91171/": "2026-10-21T10:32:23.278596+00:00",
+        "https://dengekionline.com/article/202610/91535/": "2026-10-21T10:32:23.278600+00:00",
+        "https://dengekionline.com/article/202610/91537/": "2026-10-21T10:32:23.278603+00:00",
+        "https://dengekionline.com/article/202610/63838/": "2026-10-21T10:32:23.278607+00:00",
+        "https://dengekionline.com/article/202610/91558/": "2026-10-21T10:32:23.278612+00:00",
+        "https://dengekionline.com/article/202610/89304/": "2026-10-21T10:32:23.278616+00:00",
+        "https://dengekionline.com/article/202610/84169/": "2026-10-21T10:32:23.278620+00:00",
+        "https://dengekionline.com/article/202610/90685/": "2026-10-21T10:32:23.278624+00:00",
+        "https://dengekionline.com/article/202610/91518/": "2026-10-21T10:32:23.278628+00:00",
+        "https://dengekionline.com/article/202610/90440/": "2026-10-21T10:32:23.278632+00:00",
+        "https://dengekionline.com/article/202610/91514/": "2026-10-21T10:32:23.278636+00:00",
+        "https://dengekionline.com/article/202610/91557/": "2026-10-21T10:32:23.278640+00:00",
+        "https://dengekionline.com/article/202610/90021/": "2026-10-21T10:32:23.278644+00:00",
+        "https://dengekionline.com/article/202610/91507/": "2026-10-21T10:32:23.278648+00:00",
+        "https://dengekionline.com/article/202610/90811/": "2026-10-21T10:32:23.278655+00:00",
+        "https://dengekionline.com/article/202610/91533/": "2026-10-21T10:32:23.278659+00:00",
+        "https://dengekionline.com/nintendo/article/202610/91362/": "2026-10-21T10:32:23.278663+00:00",
+        "https://dengekionline.com/article/202610/91548/": "2026-10-21T10:32:23.278671+00:00",
+        "https://dengekionline.com/article/202610/91547/": "2026-10-21T10:32:23.278675+00:00",
+        "https://dengekionline.com/article/202610/89880/": "2026-10-21T10:32:23.278679+00:00",
+        "https://dengekionline.com/article/202610/90763/": "2026-10-21T10:32:23.278683+00:00",
+        "https://dengekionline.com/article/202610/91540/": "2026-10-21T10:32:23.278687+00:00",
+        "https://dengekionline.com/article/202610/91503/": "2026-10-21T10:32:23.278691+00:00",
+        "https://dengekionline.com/article/202610/91543/": "2026-10-21T10:32:23.278695+00:00",
+        "https://dengekionline.com/article/202610/91542/": "2026-10-21T10:32:23.278699+00:00",
+        "https://dengekionline.com/article/202610/91501/": "2026-10-21T10:32:23.278703+00:00",
+        "https://dengekionline.com/article/202610/90765/": "2026-10-21T10:32:23.278707+00:00",
+        "https://dengekionline.com/article/202610/91527/": "2026-10-21T10:32:23.278711+00:00",
+        "https://dengekionline.com/article/202610/91523/": "2026-10-21T10:32:23.278715+00:00",
+        "https://dengekionline.com/article/202610/87971/": "2026-10-21T10:32:23.278718+00:00",
+        "https://dengekionline.com/article/202610/91409/": "2026-10-21T10:32:23.278722+00:00",
+        "https://dengekionline.com/article/202610/91425/": "2026-10-21T10:32:23.278726+00:00",
+        "https://dengekionline.com/article/202610/91451/": "2026-10-21T10:32:23.278730+00:00",
+        "https://dengekionline.com/article/202610/91235/": "2026-10-21T10:32:23.278734+00:00",
+        "https://dengekionline.com/article/202610/91491/": "2026-10-21T10:32:23.278738+00:00",
+        "https://dengekionline.com/article/202610/91388/": "2026-10-21T10:32:23.278742+00:00",
+        "https://dengekionline.com/article/202610/63677/": "2026-10-21T10:32:23.278746+00:00",
+        "https://dengekionline.com/article/202610/91504/": "2026-10-21T10:32:23.278750+00:00",
+        "https://dengekionline.com/article/202610/90963/": "2026-10-21T10:32:23.278757+00:00",
+        "https://dengekionline.com/article/202610/91174/": "2026-10-21T10:32:23.278760+00:00",
+        "https://dengekionline.com/article/202610/91306/": "2026-10-21T10:32:23.278764+00:00",
+        "https://dengekionline.com/article/202610/74593/": "2026-10-21T10:32:23.278768+00:00",
+        "https://dengekionline.com/article/202610/91307/": "2026-10-21T10:32:23.278772+00:00",
+        "https://dengekionline.com/article/202610/91282/": "2026-10-21T10:32:23.278776+00:00",
+        "https://dengekionline.com/article/202610/91168/": "2026-10-21T10:32:23.278780+00:00",
+        "https://dengekionline.com/article/202610/91106/": "2026-10-21T10:32:23.278784+00:00",
+        "https://dengekionline.com/article/202610/91384/": "2026-10-21T10:32:23.278788+00:00",
+        "https://dengekionline.com/article/202610/91239/": "2026-10-21T10:32:23.278792+00:00",
+        "https://dengekionline.com/article/202610/90906/": "2026-10-21T10:32:23.278796+00:00",
+        "https://dengekionline.com/article/202610/90780/": "2026-10-21T10:32:23.278802+00:00",
+        "https://dengekionline.com/article/202610/91317/": "2026-10-21T10:32:23.278806+00:00",
+        "https://dengekionline.com/article/202610/90697/": "2026-10-21T10:32:23.278810+00:00",
+        "https://dengekionline.com/article/202610/91064/": "2026-10-21T10:32:23.278814+00:00"
+      },
+      "url_watch_v07_initialized": true
     },
     "アニメ！アニメ！": {
-      "initialized": false,
-      "seen": {},
-      "observed_v07": {}
+      "initialized": true,
+      "seen": {
+        "https://animeanime.jp/article/2026/08/29/102484.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924456+00:00"
+        },
+        "https://animeanime.jp/article/2026/06/02/99624.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924466+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/13/103743.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924474+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/02/103438.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924481+00:00"
+        },
+        "https://animeanime.jp/article/2026/09/18/103046.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924489+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/06/103557.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924496+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/12/103727.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924504+00:00"
+        },
+        "https://animeanime.jp/article/2026/08/14/102026.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924512+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/17/103911.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924519+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/16/103882.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924526+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/16/103870.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924536+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/14/103804.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924545+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104062.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924558+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104061.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924567+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104060.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924575+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104059.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924583+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104058.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924590+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104057.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924597+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104056.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924605+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104055.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924614+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104051.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924622+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104050.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924632+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104048.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924638+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104047.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924642+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104045.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924646+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104038.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924650+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104037.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924654+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104036.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924658+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104035.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924662+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104034.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924666+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104027.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924670+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/20/104018.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924674+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/20/104009.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924678+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/19/103984.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924696+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/19/103978.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924701+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/09/103635.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924705+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/07/103606.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924709+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/06/103563.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924712+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/05/103543.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924716+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/03/103468.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924720+00:00"
+        },
+        "https://animeanime.jp/article/2022/04/12/68802.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924724+00:00"
+        },
+        "https://animeanime.jp/article/2024/05/13/84316.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924728+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/20/104026.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924733+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104032.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924738+00:00"
+        },
+        "https://animeanime.jp/article/2025/07/30/92019.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924742+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/20/104000.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924746+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/20/104023.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924750+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/20/104021.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:32:51.924754+00:00"
+        }
+      },
+      "observed_v07": {
+        "https://animeanime.jp/article/2026/08/29/102484.html": "2026-10-21T10:32:51.924435+00:00",
+        "https://animeanime.jp/article/2026/06/02/99624.html": "2026-10-21T10:32:51.924462+00:00",
+        "https://animeanime.jp/article/2026/10/13/103743.html": "2026-10-21T10:32:51.924470+00:00",
+        "https://animeanime.jp/article/2026/10/02/103438.html": "2026-10-21T10:32:51.924478+00:00",
+        "https://animeanime.jp/article/2026/09/18/103046.html": "2026-10-21T10:32:51.924485+00:00",
+        "https://animeanime.jp/article/2026/10/06/103557.html": "2026-10-21T10:32:51.924492+00:00",
+        "https://animeanime.jp/article/2026/10/12/103727.html": "2026-10-21T10:32:51.924500+00:00",
+        "https://animeanime.jp/article/2026/08/14/102026.html": "2026-10-21T10:32:51.924508+00:00",
+        "https://animeanime.jp/article/2026/10/17/103911.html": "2026-10-21T10:32:51.924515+00:00",
+        "https://animeanime.jp/article/2026/10/16/103882.html": "2026-10-21T10:32:51.924523+00:00",
+        "https://animeanime.jp/article/2026/10/16/103870.html": "2026-10-21T10:32:51.924531+00:00",
+        "https://animeanime.jp/article/2026/10/14/103804.html": "2026-10-21T10:32:51.924541+00:00",
+        "https://animeanime.jp/article/2026/10/21/104062.html": "2026-10-21T10:32:51.924553+00:00",
+        "https://animeanime.jp/article/2026/10/21/104061.html": "2026-10-21T10:32:51.924562+00:00",
+        "https://animeanime.jp/article/2026/10/21/104060.html": "2026-10-21T10:32:51.924571+00:00",
+        "https://animeanime.jp/article/2026/10/21/104059.html": "2026-10-21T10:32:51.924579+00:00",
+        "https://animeanime.jp/article/2026/10/21/104058.html": "2026-10-21T10:32:51.924586+00:00",
+        "https://animeanime.jp/article/2026/10/21/104057.html": "2026-10-21T10:32:51.924594+00:00",
+        "https://animeanime.jp/article/2026/10/21/104056.html": "2026-10-21T10:32:51.924601+00:00",
+        "https://animeanime.jp/article/2026/10/21/104055.html": "2026-10-21T10:32:51.924609+00:00",
+        "https://animeanime.jp/article/2026/10/21/104051.html": "2026-10-21T10:32:51.924618+00:00",
+        "https://animeanime.jp/article/2026/10/21/104050.html": "2026-10-21T10:32:51.924627+00:00",
+        "https://animeanime.jp/article/2026/10/21/104048.html": "2026-10-21T10:32:51.924636+00:00",
+        "https://animeanime.jp/article/2026/10/21/104047.html": "2026-10-21T10:32:51.924640+00:00",
+        "https://animeanime.jp/article/2026/10/21/104045.html": "2026-10-21T10:32:51.924644+00:00",
+        "https://animeanime.jp/article/2026/10/21/104038.html": "2026-10-21T10:32:51.924648+00:00",
+        "https://animeanime.jp/article/2026/10/21/104037.html": "2026-10-21T10:32:51.924652+00:00",
+        "https://animeanime.jp/article/2026/10/21/104036.html": "2026-10-21T10:32:51.924656+00:00",
+        "https://animeanime.jp/article/2026/10/21/104035.html": "2026-10-21T10:32:51.924660+00:00",
+        "https://animeanime.jp/article/2026/10/21/104034.html": "2026-10-21T10:32:51.924664+00:00",
+        "https://animeanime.jp/article/2026/10/21/104027.html": "2026-10-21T10:32:51.924668+00:00",
+        "https://animeanime.jp/article/2026/10/20/104018.html": "2026-10-21T10:32:51.924672+00:00",
+        "https://animeanime.jp/article/2026/10/20/104009.html": "2026-10-21T10:32:51.924676+00:00",
+        "https://animeanime.jp/article/2026/10/19/103984.html": "2026-10-21T10:32:51.924680+00:00",
+        "https://animeanime.jp/article/2026/10/19/103978.html": "2026-10-21T10:32:51.924699+00:00",
+        "https://animeanime.jp/article/2026/10/09/103635.html": "2026-10-21T10:32:51.924703+00:00",
+        "https://animeanime.jp/article/2026/10/07/103606.html": "2026-10-21T10:32:51.924707+00:00",
+        "https://animeanime.jp/article/2026/10/06/103563.html": "2026-10-21T10:32:51.924711+00:00",
+        "https://animeanime.jp/article/2026/10/05/103543.html": "2026-10-21T10:32:51.924715+00:00",
+        "https://animeanime.jp/article/2026/10/03/103468.html": "2026-10-21T10:32:51.924718+00:00",
+        "https://animeanime.jp/article/2022/04/12/68802.html": "2026-10-21T10:32:51.924722+00:00",
+        "https://animeanime.jp/article/2024/05/13/84316.html": "2026-10-21T10:32:51.924726+00:00",
+        "https://animeanime.jp/article/2026/10/20/104026.html": "2026-10-21T10:32:51.924730+00:00",
+        "https://animeanime.jp/article/2026/10/21/104032.html": "2026-10-21T10:32:51.924736+00:00",
+        "https://animeanime.jp/article/2025/07/30/92019.html": "2026-10-21T10:32:51.924740+00:00",
+        "https://animeanime.jp/article/2026/10/20/104000.html": "2026-10-21T10:32:51.924744+00:00",
+        "https://animeanime.jp/article/2026/10/20/104023.html": "2026-10-21T10:32:51.924748+00:00",
+        "https://animeanime.jp/article/2026/10/20/104021.html": "2026-10-21T10:32:51.924752+00:00"
+      },
+      "url_watch_v07_initialized": true
     },
     "GAME Watch": {
-      "initialized": false,
-      "seen": {},
-      "observed_v07": {}
+      "initialized": true,
+      "seen": {
+        "https://game.watch.impress.co.jp/docs/news/2150129.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136636+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2150124.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136646+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2150095.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136653+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2150086.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136660+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2150081.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136668+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2150070.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136676+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2150062.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136685+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2150026.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136694+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2150011.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136701+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2150000.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136708+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149999.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136717+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149961.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136741+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149924.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136745+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149919.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136749+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149918.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136753+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149912.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136757+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149910.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136761+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149908.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136765+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149905.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136769+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149900.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136773+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149890.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136777+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149860.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136781+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149837.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136785+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149834.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136789+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149705.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136793+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149086.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136797+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2143857.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136801+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2139601.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136805+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149774.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136809+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149734.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136823+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149717.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136832+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149692.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136839+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149638.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136852+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149262.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136859+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149610.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136867+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149608.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136874+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149602.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136881+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149605.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136889+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149584.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136897+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149559.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136905+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149534.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136912+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149508.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136920+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149511.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136929+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149501.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136938+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149397.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136946+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149367.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136953+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149357.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136960+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149350.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136967+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149344.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136975+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149320.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136983+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149403.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.136993+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149386.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137000+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149375.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137012+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149328.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137030+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149317.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137131+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149293.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137136+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149288.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137140+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149284.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137144+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149263.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137148+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149245.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137152+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149243.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137155+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149228.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137159+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149220.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137163+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149193.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137167+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149195.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137171+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149171.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137174+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149167.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137178+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149153.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137182+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149148.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137186+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149144.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137190+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149134.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137194+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2149091.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137198+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2147700.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137202+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2147639.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137205+00:00"
+        },
+        "https://game.watch.impress.co.jp/docs/news/2147420.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:33:17.137214+00:00"
+        }
+      },
+      "observed_v07": {
+        "https://game.watch.impress.co.jp/docs/news/2150129.html": "2026-10-21T10:33:17.136614+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2150124.html": "2026-10-21T10:33:17.136642+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2150095.html": "2026-10-21T10:33:17.136650+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2150086.html": "2026-10-21T10:33:17.136657+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2150081.html": "2026-10-21T10:33:17.136664+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2150070.html": "2026-10-21T10:33:17.136672+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2150062.html": "2026-10-21T10:33:17.136680+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2150026.html": "2026-10-21T10:33:17.136689+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2150011.html": "2026-10-21T10:33:17.136697+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2150000.html": "2026-10-21T10:33:17.136705+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149999.html": "2026-10-21T10:33:17.136712+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149961.html": "2026-10-21T10:33:17.136739+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149924.html": "2026-10-21T10:33:17.136743+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149919.html": "2026-10-21T10:33:17.136747+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149918.html": "2026-10-21T10:33:17.136751+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149912.html": "2026-10-21T10:33:17.136755+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149910.html": "2026-10-21T10:33:17.136759+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149908.html": "2026-10-21T10:33:17.136763+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149905.html": "2026-10-21T10:33:17.136767+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149900.html": "2026-10-21T10:33:17.136771+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149890.html": "2026-10-21T10:33:17.136775+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149860.html": "2026-10-21T10:33:17.136779+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149837.html": "2026-10-21T10:33:17.136784+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149834.html": "2026-10-21T10:33:17.136787+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149705.html": "2026-10-21T10:33:17.136791+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149086.html": "2026-10-21T10:33:17.136795+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2143857.html": "2026-10-21T10:33:17.136799+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2139601.html": "2026-10-21T10:33:17.136804+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149774.html": "2026-10-21T10:33:17.136807+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149734.html": "2026-10-21T10:33:17.136819+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149717.html": "2026-10-21T10:33:17.136827+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149692.html": "2026-10-21T10:33:17.136836+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149638.html": "2026-10-21T10:33:17.136848+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149262.html": "2026-10-21T10:33:17.136856+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149610.html": "2026-10-21T10:33:17.136863+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149608.html": "2026-10-21T10:33:17.136871+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149602.html": "2026-10-21T10:33:17.136878+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149605.html": "2026-10-21T10:33:17.136885+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149584.html": "2026-10-21T10:33:17.136893+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149559.html": "2026-10-21T10:33:17.136902+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149534.html": "2026-10-21T10:33:17.136909+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149508.html": "2026-10-21T10:33:17.136916+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149511.html": "2026-10-21T10:33:17.136924+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149501.html": "2026-10-21T10:33:17.136934+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149397.html": "2026-10-21T10:33:17.136942+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149367.html": "2026-10-21T10:33:17.136949+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149357.html": "2026-10-21T10:33:17.136957+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149350.html": "2026-10-21T10:33:17.136963+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149344.html": "2026-10-21T10:33:17.136971+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149320.html": "2026-10-21T10:33:17.136979+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149403.html": "2026-10-21T10:33:17.136988+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149386.html": "2026-10-21T10:33:17.136997+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149375.html": "2026-10-21T10:33:17.137004+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149328.html": "2026-10-21T10:33:17.137025+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149317.html": "2026-10-21T10:33:17.137127+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149293.html": "2026-10-21T10:33:17.137133+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149288.html": "2026-10-21T10:33:17.137138+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149284.html": "2026-10-21T10:33:17.137142+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149263.html": "2026-10-21T10:33:17.137146+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149245.html": "2026-10-21T10:33:17.137150+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149243.html": "2026-10-21T10:33:17.137154+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149228.html": "2026-10-21T10:33:17.137157+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149220.html": "2026-10-21T10:33:17.137161+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149193.html": "2026-10-21T10:33:17.137165+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149195.html": "2026-10-21T10:33:17.137169+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149171.html": "2026-10-21T10:33:17.137173+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149167.html": "2026-10-21T10:33:17.137176+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149153.html": "2026-10-21T10:33:17.137180+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149148.html": "2026-10-21T10:33:17.137184+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149144.html": "2026-10-21T10:33:17.137188+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149134.html": "2026-10-21T10:33:17.137192+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2149091.html": "2026-10-21T10:33:17.137196+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2147700.html": "2026-10-21T10:33:17.137200+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2147639.html": "2026-10-21T10:33:17.137203+00:00",
+        "https://game.watch.impress.co.jp/docs/news/2147420.html": "2026-10-21T10:33:17.137207+00:00"
+      },
+      "url_watch_v07_initialized": true
     }
   },
   "global_sent": {
@@ -859,5 +2131,6 @@
   "daily_posts": {
     "2026-10-21": 1
   },
-  "pending_v07": {}
+  "pending_v07": {},
+  "url_watch_v07_initialized": true
 }
