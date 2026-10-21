@@ -22,7 +22,10 @@ SOURCES = ROOT / 'sources.json'
 LOG = logging.getLogger('bangdream')
 SESSION = requests.Session()
 SESSION.headers.update({'User-Agent': 'Mozilla/5.0 (compatible; BangDreamPersonalNewsWatcher/2.0)'})
-TIMEOUT = 20
+TIMEOUT = 8
+RSS_TIMEOUT = 5
+BACKFILL_MAX_PER_RUN = 5
+BACKFILL_SCAN_PER_SOURCE = 3
 MAX_PER_SOURCE = 25
 MAX_POSTS_PER_RUN = 5
 MAX_POSTS_PER_DAY = 24
@@ -52,7 +55,7 @@ def canonical(url):
 
 
 def fetch(url):
-    for i in range(3):
+    for i in range(2):
         try:
             r = SESSION.get(url, timeout=TIMEOUT)
             r.raise_for_status()
@@ -60,7 +63,7 @@ def fetch(url):
                 raise ValueError('Page too large')
             return BeautifulSoup(r.content, 'lxml')
         except (requests.RequestException, ValueError):
-            if i == 2:
+            if i == 1:
                 raise
             time.sleep(i + 1)
 
@@ -81,7 +84,7 @@ def article_link(url, source):
 
 def rss_items(endpoint):
     """Read RSS/Atom links and original timestamps where available."""
-    response = SESSION.get(endpoint, timeout=TIMEOUT)
+    response = SESSION.get(endpoint, timeout=RSS_TIMEOUT)
     response.raise_for_status()
     root = ET.fromstring(response.content)
     items = []
@@ -110,7 +113,7 @@ def discover(source):
         if u not in visited and article_link(u, source):
             visited.add(u)
             found.append(u)
-    if mode in ('html', 'hybrid', 'search_rss'):
+    if mode in ('html', 'hybrid', 'search_rss', 'shopify'):
         listings = [source['url']] + source.get('additional_list_pages', [])
         for listing in listings:
             try:
@@ -120,8 +123,15 @@ def discover(source):
             except Exception as exc:
                 failures.append(f'HTML {listing}: {exc}')
             time.sleep(0.15)
+    for listing in source.get('search_pages', []):
+        try:
+            soup = fetch(listing)
+            for a in soup.select('a[href]'):
+                add(urljoin(listing, a['href']))
+        except Exception as exc:
+            failures.append(f'Search page {listing}: {exc}')
     # Shopify product catalog: use the public JSON endpoint, if enabled by store.
-    if source.get('discovery') == 'shopify':
+    if source.get('discovery') == 'shopify' and source.get('shopify_api', False):
         endpoint = source['url'].rstrip('/') + '/products.json?limit=100'
         try:
             response = SESSION.get(endpoint, timeout=TIMEOUT)
@@ -141,14 +151,19 @@ def discover(source):
                 add(urljoin(source['url'], a['href']))
         except Exception as exc:
             failures.append(f'Shopify HTML: {exc}')
+    for feed in source.get('rss_urls', []):
+        try:
+            for link, _ in rss_items(feed):
+                add(link)
+        except Exception as exc:
+            failures.append(f'Official RSS {feed}: {exc}')
     if mode in ('search_rss', 'hybrid', 'shopify'):
         domain = urlparse(source['url']).netloc
-        terms = source.get('search_terms', ['バンドリ', 'BanG Dream'])[:3]
+        terms = source.get('search_terms', ['バンドリ', 'BanG Dream'])[:1]
         for term in terms:
             query = f'site:{domain} "{term}"'
             endpoints = [
                 'https://www.bing.com/search?format=rss&q=' + quote(query),
-                'https://news.google.com/rss/search?q=' + quote(query) + '&hl=ja&gl=JP&ceid=JP:ja',
             ]
             for endpoint in endpoints:
                 try:
@@ -286,6 +301,22 @@ def publication_date(url):
     return None
 
 
+def date_from_url(url):
+    path = urlparse(url).path
+    patterns = (
+        r'(?<!\d)(20\d{2})[/-](0?[1-9]|1[0-2])[/-](0?[1-9]|[12]\d|3[01])(?!\d)',
+        r'(?<!\d)(20\d{2})(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])(?!\d)',
+    )
+    for pattern in patterns:
+        m = re.search(pattern, path)
+        if m:
+            try:
+                return datetime(*(int(x) for x in m.groups()), tzinfo=JST).astimezone(timezone.utc)
+            except ValueError:
+                pass
+    return None
+
+
 def publication_status(date):
     if date is None:
         return 'unknown'
@@ -398,6 +429,22 @@ def run():
                         stats['new_urls'] += 1
                         LOG.info('New URL queued: %s', link)
                 seen.setdefault(link, {'hash': None, 'first_seen': now()})
+            # One-time controlled backfill: examine only top listing URLs, never resend.
+            # Do not mark complete until a successful listing has been fetched.
+            if not previous.get('recent_backfill_v11_done'):
+                added = 0
+                for position, link in enumerate(links[:BACKFILL_SCAN_PER_SOURCE]):
+                    if link not in state['global_sent'] and link not in state['pending_v07']:
+                        if date_from_url(link) and publication_status(date_from_url(link)) != 'recent':
+                            continue
+                        state['pending_v07'][link] = {
+                            'source': name, 'first_seen': now(),
+                            'listing_position': position, 'first_discovery': False,
+                            'backfill_v11': True,
+                        }
+                        added += 1
+                previous['recent_backfill_v11_done'] = True
+                LOG.info('%s: recent backfill candidates=%d (date will be verified)', name, added)
             previous['url_watch_v07_initialized'] = True
             previous['initialized'] = True
             if len(observed) > MAX_SEEN:
@@ -426,6 +473,12 @@ def run():
             # Keep pending in case the source is enabled again.
             continue
         try:
+            url_date = date_from_url(link)
+            if url_date and publication_status(url_date) in ('old', 'future'):
+                stats['old'] += 1
+                LOG.info('Skipped dated URL: %s', link)
+                del state['pending_v07'][link]
+                continue
             published = publication_date(link)
             status = publication_status(published)
             if status in ('old', 'future'):
@@ -437,15 +490,12 @@ def run():
                 # An old page first encountered deep in a listing is NOT trustworthy
                 # evidence of a new publication. Only genuinely newly observed top links
                 # qualify, and never the v0.7 migration baseline.
-                if (source.get('discovery') == 'search_rss' or not item.get('first_discovery') or item.get('listing_position', 9999) >= UNKNOWN_DATE_TOP_N):
+                if (source.get('discovery') == 'search_rss' or item.get('backfill_v11') or not item.get('first_discovery') or item.get('listing_position', 9999) >= UNKNOWN_DATE_TOP_N):
                     stats['undated_skipped'] += 1
                     LOG.info('Undated, insufficient evidence; skipped: %s', link)
                     del state['pending_v07'][link]
                     continue
-                stats['undated_sent'] += 1
                 LOG.info('Undated, new top-of-list URL (provisional): %s', link)
-            else:
-                stats['recent'] += 1
             title, summary = extract(link)
             if not relevant(title, summary, source):
                 stats['filtered'] += 1
@@ -458,6 +508,7 @@ def run():
             seen[link] = {'hash': digest, 'first_seen': item.get('first_seen', now())}
             count_post(state)
             stats['sent'] += 1
+            stats['undated_sent' if status == 'unknown' else 'recent'] += 1
             del state['pending_v07'][link]
             LOG.info('Sent %s', link)
         except Exception as exc:
