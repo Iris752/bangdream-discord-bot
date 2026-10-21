@@ -31,7 +31,19 @@ MAX_POSTS_PER_RUN = 5
 MAX_POSTS_PER_DAY = 24
 MAX_SEEN = 12000
 MAX_AGE_DAYS = 7
-UNKNOWN_DATE_TOP_N = 3  # Unknown dates: only brand-new URLs near the top of a listing
+UNKNOWN_DATE_TOP_N = 3
+# Safety-first: preview candidates in Actions logs; never post until explicitly enabled.
+DRY_RUN = os.getenv('BANGDREAM_DRY_RUN', '1').strip().lower() not in ('0', 'false', 'off')
+STRICT_TERMS = (
+    'ban g dream', 'bang dream', 'bangdream', 'バンドリ', 'ガルパ',
+    'mygo!!!!!', 'mygo', 'ave mujica', 'roselia', 'poppin’party',
+    "poppin'party", 'afterglow', 'pastel＊palettes', 'pastel palettes',
+    'morfonica', 'raise a suilen', 'ハロー、ハッピーワールド',
+    '夢限大みゅーたいぷ', 'millsage', 'アワーノーツ',
+    'our notes', 'ポピパ', 'パスパレ', 'ハロハピ', 'ミルサージュ',
+)
+# No loose substring matching for short words such as "ラス".
+  # Unknown dates: only brand-new URLs near the top of a listing
 JST = ZoneInfo("Asia/Tokyo")
 # Include project-wide stories even if no band is named. Apply filtering only to general corporate feeds.
 RELATED = ('bang dream', 'bangdream', 'バンドリ', 'ガルパ', 'mygo', 'ave mujica', 'roselia',
@@ -262,7 +274,7 @@ def publication_date(url):
         'meta[property="datePublished"]', 'meta[name="datePublished"]',
         'time[datetime]', '[itemprop="datePublished"][datetime]',
         '.news-date', '.news_date', '.entry-date', '.post-date',
-        '.publish-date', '.published', '.article-date', '.date',
+        '.publish-date', '.published', '.article-date',
     ):
         for node in soup.select(selector)[:5]:
             val = node.get('content') or node.get('datetime') or node.get_text(' ', strip=True)
@@ -348,15 +360,21 @@ def can_post(state):
 
 
 def relevant(title, summary, source):
-    if not source.get('filter_related'):
+    """Fail closed for broad sources. Do not search the page's global navigation."""
+    title_norm = clean(title).lower()
+    summary_norm = clean(summary).lower()
+    # All sources must have an article-level signal, including official aggregators.
+    # On dedicated BanG Dream sites, the site identity is strong enough.
+    dedicated = source.get('name', '').startswith((
+        'BanG Dream! 総合', 'ガルパ公式', 'MyGO!!!!! アニメ',
+        'Ave Mujica アニメ', 'Ave Mujica 劇場版',
+        'MyGO!!!!! × Ave Mujica 続編', 'Our Notes 公式'
+    ))
+    if dedicated:
         return True
-    combined = (title + '\n' + summary).lower()
-    if not any(k in combined for k in RELATED):
-        return False
-    # Exclude only explicitly personal-only stories without a band/project context.
-    if any(k in combined for k in PERSONAL) and not any(k in title.lower() for k in RELATED):
-        return False
-    return True
+    # Broad sources: title must explicitly name the franchise or a band.
+    # Body-only matches are not trusted: menus, recommendations and ads can leak.
+    return any(term in title_norm for term in STRICT_TERMS)
 
 
 def post(webhook, content):
@@ -389,7 +407,7 @@ def send_article(webhook, source, title, summary, url, update=False):
 def run():
     """Detect new URLs; prefer publication date and cautiously handle undated pages."""
     webhook = os.getenv('BANGDREAM_DISCORD_WEBHOOK_URL', '').strip()
-    if not webhook:
+    if not webhook and not DRY_RUN:
         raise RuntimeError('Set BANGDREAM_DISCORD_WEBHOOK_URL in GitHub Secrets')
     sources = json.loads(SOURCES.read_text(encoding='utf-8'))
     state = json.loads(STATE.read_text(encoding='utf-8')) if STATE.exists() else {'sources': {}, 'global_sent': {}}
@@ -401,7 +419,7 @@ def run():
     migration = not state.get('url_watch_v07_initialized', False)
     stats = {'discovered': 0, 'new_urls': 0, 'queued': 0, 'sent': 0,
              'filtered': 0, 'deferred': 0, 'baseline': 0, 'errors': 0,
-             'old': 0, 'undated_skipped': 0, 'undated_sent': 0, 'recent': 0}
+             'old': 0, 'undated_skipped': 0, 'undated_sent': 0, 'recent': 0, 'previewed': 0}
     errors = []
     state['_posts_this_run'] = 0
     enabled = {s['name']: s for s in sources if s.get('enabled', False)}
@@ -502,6 +520,11 @@ def run():
                 del state['pending_v07'][link]
                 continue
             digest = hashlib.sha256((title + '\n' + summary).encode()).hexdigest()
+            if DRY_RUN:
+                LOG.info('DRY RUN candidate (not sent): source=%s title=%s url=%s', name, title, link)
+                stats['previewed'] += 1
+                # Keep queued until user explicitly enables posting.
+                continue
             send_article(webhook, name, title, summary, link)
             state['global_sent'][link] = digest
             seen = state['sources'][name].setdefault('seen', {})
