@@ -7,6 +7,7 @@ import os
 import re
 import time
 from datetime import datetime, timezone, timedelta
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from urllib.parse import urljoin, urlparse, urldefrag, parse_qsl, urlencode, urlunparse
 
@@ -25,6 +26,9 @@ MAX_POSTS_PER_RUN = 5
 MAX_POSTS_PER_DAY = 24
 MAX_ARTICLE_AGE_DAYS = 14
 MAX_SEEN = 12000
+JST = ZoneInfo("Asia/Tokyo")
+BACKFILL_START = datetime(2026, 10, 20, tzinfo=JST).astimezone(timezone.utc)
+BACKFILL_KEY = "backfill_since_2026_10_20_v1"
 # Include project-wide stories even if no band is named. Apply filtering only to general corporate feeds.
 RELATED = ('bang dream', 'bangdream', 'バンドリ', 'ガルパ', 'mygo', 'ave mujica', 'roselia',
            'poppin', 'afterglow', 'pastel', 'morfonica', 'raise a suilen', 'ハロー、ハッピー',
@@ -137,6 +141,7 @@ def publication_date(url):
     values = []
     for selector in ('meta[property="article:published_time"]', 'meta[name="date"]',
                      'meta[name="pubdate"]', 'meta[itemprop="datePublished"]',
+                     'meta[property="datePublished"]', 'meta[name="datePublished"]',
                      'time[datetime]'):
         for node in soup.select(selector):
             value = node.get('content') or node.get('datetime')
@@ -163,19 +168,21 @@ def publication_date(url):
         values.append('-'.join(match.groups()))
     for value in values:
         try:
-            date = datetime.fromisoformat(str(value).strip().replace('Z', '+00:00'))
-            return date.replace(tzinfo=timezone.utc) if date.tzinfo is None else date.astimezone(timezone.utc)
+            raw = str(value).strip().replace('Z', '+00:00')
+            date = datetime.fromisoformat(raw)
+            # Japanese official pages commonly use local naive publication dates.
+            return date.replace(tzinfo=JST).astimezone(timezone.utc) if date.tzinfo is None else date.astimezone(timezone.utc)
         except (ValueError, TypeError):
             continue
     return None
 
 
 def in_window(date):
-    return date is not None and timedelta(0) <= datetime.now(timezone.utc) - date <= timedelta(days=MAX_ARTICLE_AGE_DAYS)
+    return date is not None and date >= BACKFILL_START and timedelta(0) <= datetime.now(timezone.utc) - date <= timedelta(days=MAX_ARTICLE_AGE_DAYS)
 
 
 def quota_available(state):
-    today = datetime.now(timezone.utc).date().isoformat()
+    today = datetime.now(JST).date().isoformat()
     daily = state.setdefault('daily_posts', {})
     # UTC calendar day. Remove older counters to avoid unbounded state.
     for key in list(daily):
@@ -185,7 +192,7 @@ def quota_available(state):
 
 
 def count_post(state):
-    today = datetime.now(timezone.utc).date().isoformat()
+    today = datetime.now(JST).date().isoformat()
     daily = state.setdefault('daily_posts', {})
     daily[today] = daily.get(today, 0) + 1
     state['_posts_this_run'] += 1
@@ -243,6 +250,11 @@ def run():
     state.setdefault('sources', {})
     state.setdefault('global_sent', {})
     # Old global URL entries remain valid after upgrading from v02.
+    # A one-time backfill rechecks baseline-only URLs without resetting the state.
+    # Only a successful Discord post counts as sent.
+    backfill = not state.get(BACKFILL_KEY, False)
+    backfill_remaining = False
+    stats = {'new_urls': 0, 'backfill_candidates': 0, 'sent': 0, 'already_sent': 0, 'old': 0, 'undated': 0, 'deferred': 0, 'filtered': 0}
     errors = []
     state['_posts_this_run'] = 0
     for source in sources:
@@ -255,55 +267,72 @@ def run():
             links = discover(source)
             LOG.info('%s: %d links', name, len(links))
             if not previous.get('initialized'):
-                # Baseline only after successful discovery. Do not send old articles.
+                # New sources are baselined without mass posting; existing source
+                # baselines can be rechecked during the one-time 10/20 backfill.
                 for link in links:
                     seen.setdefault(link, {'hash': None, 'first_seen': now()})
                 previous['initialized'] = True
                 LOG.info('%s: baseline created (%d)', name, len(links))
             else:
-                pending = [link for link in links if link not in seen]
-                # Limit new posts per run; unprocessed URLs stay unmarked for next run.
-                for link in reversed(pending[:MAX_PER_SOURCE]):
+                pending = [link for link in links if link not in seen or (seen[link].get('hash') is None and link not in state['global_sent'])]
+                stats['new_urls'] += len(pending)
+                baseline_only = [link for link in links if link in seen and seen[link].get('hash') in (None, 'out_of_window') and link not in state['global_sent']]
+                candidates = list(dict.fromkeys((baseline_only if backfill else []) + pending))
+                stats['backfill_candidates'] += len(baseline_only) if backfill else 0
+                # Listing order is generally newest first; process in that order.
+                for link in candidates[:MAX_PER_SOURCE]:
                     try:
+                        if link in state['global_sent']:
+                            seen.setdefault(link, {'first_seen': now()})['hash'] = state['global_sent'][link]
+                            stats['already_sent'] += 1
+                            continue
                         published = publication_date(link)
+                        if published is None:
+                            stats['undated'] += 1
+                            # Do not mark as sent or discard; retry on future runs.
+                            LOG.info('Date unavailable (retry later): %s', link)
+                            continue
                         if not in_window(published):
-                            # Older/undated articles are intentionally excluded, not deferred.
-                            seen[link] = {'hash': 'out_of_window', 'first_seen': now()}
-                            LOG.info('Skipped old/undated article: %s', link)
+                            stats['old'] += 1
+                            seen.setdefault(link, {'first_seen': now()})['hash'] = 'out_of_window'
                             continue
                         if not can_post(state):
+                            stats['deferred'] += 1
+                            backfill_remaining = True
                             LOG.info('Notification quota reached; defer %s', link)
-                            continue  # Not marked seen: retry next scheduled run.
+                            continue
                         title, summary = extract(link)
                         digest = hashlib.sha256((title + '\n' + summary).encode()).hexdigest()
                         if not relevant(title, summary, source):
-                            seen[link] = {'hash': 'filtered', 'first_seen': now()}
+                            seen.setdefault(link, {'first_seen': now()})['hash'] = 'filtered'
+                            stats['filtered'] += 1
                             continue
-                        if link not in state['global_sent']:
-                            send_article(webhook, name, title, summary, link)
-                            state['global_sent'][link] = digest
-                            count_post(state)
+                        send_article(webhook, name, title, summary, link)
+                        state['global_sent'][link] = digest
                         seen[link] = {'hash': digest, 'first_seen': now()}
-                        LOG.info('Processed %s', link)
+                        count_post(state)
+                        stats['sent'] += 1
+                        LOG.info('Sent %s', link)
                     except Exception as exc:
+                        backfill_remaining = True
                         errors.append(f'{name}: article {link}: {exc}')
-                # Update detection for previously sent articles in current listing.
-                # Baseline entries are not sent as updates to prevent initial floods.
+                if len(candidates) > MAX_PER_SOURCE:
+                    backfill_remaining = True
+                # Update detection only for articles actually sent before.
                 if source.get('detect_updates', True):
                     for link in links[:10]:
                         old = seen.get(link, {})
-                        if not old.get('hash') or old['hash'] in ('filtered', 'out_of_window'):
+                        if link not in state['global_sent'] or not old.get('hash') or old['hash'] in ('filtered', 'out_of_window'):
                             continue
                         try:
-                            if not in_window(publication_date(link)):
-                                continue
-                            if not can_post(state):
+                            if not in_window(publication_date(link)) or not can_post(state):
                                 continue
                             title, summary = extract(link)
                             digest = hashlib.sha256((title + '\n' + summary).encode()).hexdigest()
-                            if digest != old['hash'] and relevant(title, summary, source):
+                            if digest != state['global_sent'][link] and relevant(title, summary, source):
                                 send_article(webhook, name, title, summary, link, update=True)
                                 count_post(state)
+                                stats['sent'] += 1
                                 old['hash'] = digest
                                 state['global_sent'][link] = digest
                         except Exception as exc:
@@ -314,7 +343,13 @@ def run():
             state['sources'][name] = previous
         except Exception as exc:
             errors.append(f'{name}: listing: {exc}')
-    LOG.info('Notifications this run: %d/%d; today (UTC): %d/%d', state['_posts_this_run'], MAX_POSTS_PER_RUN, state.get('daily_posts', {}).get(datetime.now(timezone.utc).date().isoformat(), 0), MAX_POSTS_PER_DAY)
+    LOG.info('Notifications this run: %d/%d; today (JST): %d/%d', state['_posts_this_run'], MAX_POSTS_PER_RUN, state.get('daily_posts', {}).get(datetime.now(JST).date().isoformat(), 0), MAX_POSTS_PER_DAY)
+    LOG.info('Diagnostics: %s', json.dumps(stats, ensure_ascii=False))
+    if backfill and not backfill_remaining and not errors:
+        state[BACKFILL_KEY] = True
+        LOG.info('Backfill complete; one-time recheck disabled')
+    elif backfill:
+        LOG.info('Backfill remains active for deferred/error items')
     del state['_posts_this_run']
     STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     if errors:
