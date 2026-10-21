@@ -500,39 +500,39 @@
       "initialized": true,
       "seen": {
         "https://avemujica-movie.bang-dream.com/news/post-10/": {
-          "hash": null,
-          "first_seen": "2026-10-20T11:47:58.287087+00:00"
+          "hash": "15e3465d15bb2cfb03b38b37ab72f24c216d704e660f5f822a0295b095f0f114",
+          "first_seen": "2026-10-21T03:44:22.253319+00:00"
         },
         "https://avemujica-movie.bang-dream.com/news/post-8/": {
-          "hash": null,
+          "hash": "out_of_window",
           "first_seen": "2026-10-20T11:47:58.287110+00:00"
         },
         "https://avemujica-movie.bang-dream.com/news/post-7/": {
-          "hash": null,
+          "hash": "out_of_window",
           "first_seen": "2026-10-20T11:47:58.287115+00:00"
         },
         "https://avemujica-movie.bang-dream.com/news/post-6/": {
-          "hash": null,
+          "hash": "out_of_window",
           "first_seen": "2026-10-20T11:47:58.287121+00:00"
         },
         "https://avemujica-movie.bang-dream.com/news/post-5/": {
-          "hash": null,
+          "hash": "out_of_window",
           "first_seen": "2026-10-20T11:47:58.287125+00:00"
         },
         "https://avemujica-movie.bang-dream.com/news/post-4/": {
-          "hash": null,
+          "hash": "out_of_window",
           "first_seen": "2026-10-20T11:47:58.287129+00:00"
         },
         "https://avemujica-movie.bang-dream.com/news/post-3/": {
-          "hash": null,
+          "hash": "out_of_window",
           "first_seen": "2026-10-20T11:47:58.287133+00:00"
         },
         "https://avemujica-movie.bang-dream.com/news/post-2/": {
-          "hash": null,
+          "hash": "out_of_window",
           "first_seen": "2026-10-20T11:47:58.287137+00:00"
         },
         "https://avemujica-movie.bang-dream.com/news/post-1/": {
-          "hash": null,
+          "hash": "out_of_window",
           "first_seen": "2026-10-20T11:47:58.287141+00:00"
         }
       }
@@ -608,6 +608,10 @@
     "https://bang-dream.com/news/2423/": "1db5401f61c15162563745cdd9ed0a4c0f715ac87ff133a6dd32ef895449f830",
     "https://bang-dream.com/news/2422/": "710e2bc20790169052fad29e06f5c4a1bdd8013643e7117dc5cd6962b8a7dd52",
     "https://bang-dream.com/news/2425/": "8e02333116ec8fe59393dd8492d94829155f7fc1f1be358f146480f510a203a8",
-    "https://bang-dream.com/news/2424/": "0e30894fc31ae1b473fc7ac291676917520ff29e51cb85242a92d8a2761c254b"
+    "https://bang-dream.com/news/2424/": "0e30894fc31ae1b473fc7ac291676917520ff29e51cb85242a92d8a2761c254b",
+    "https://avemujica-movie.bang-dream.com/news/post-10/": "15e3465d15bb2cfb03b38b37ab72f24c216d704e660f5f822a0295b095f0f114"
+  },
+  "daily_posts": {
+    "2026-10-21": 1
   }
 }
