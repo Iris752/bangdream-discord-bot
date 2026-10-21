@@ -6,6 +6,8 @@ import logging
 import os
 import re
 import time
+import xml.etree.ElementTree as ET
+from email.utils import parsedate_to_datetime
 from datetime import datetime, timezone, timedelta
 from zoneinfo import ZoneInfo
 from pathlib import Path
@@ -46,7 +48,7 @@ def canonical(url):
     url, _ = urldefrag(url)
     p = urlparse(url)
     qs = [(k, v) for k, v in parse_qsl(p.query) if k.lower() not in ('utm_source', 'utm_medium', 'utm_campaign', 'fbclid', 'gclid')]
-    return urlunparse((p.scheme.lower(), p.netloc.lower(), p.path.rstrip('/') + '/', '', urlencode(qs), ''))
+    return urlunparse((p.scheme.lower(), p.netloc.lower(), p.path.rstrip('/') + ('' if re.search(r'\.[a-z0-9]{2,5}$', p.path, re.I) else '/'), '', urlencode(qs), ''))
 
 
 def fetch(url):
@@ -77,54 +79,95 @@ def article_link(url, source):
     return bool(re.search(source['article_pattern'], path, re.I))
 
 
-def discover(source):
-    """Discover URLs via original HTML lists and/or domain-restricted Bing RSS search.
+def rss_items(endpoint):
+    """Read RSS/Atom links and original timestamps where available."""
+    response = SESSION.get(endpoint, timeout=TIMEOUT)
+    response.raise_for_status()
+    root = ET.fromstring(response.content)
+    items = []
+    for node in root.findall('.//item'):
+        link = node.findtext('link', '').strip()
+        date = node.findtext('pubDate', '').strip()
+        if link:
+            items.append((link, date))
+    ns = {'a': 'http://www.w3.org/2005/Atom'}
+    for node in root.findall('.//a:entry', ns):
+        linknode = node.find('a:link', ns)
+        link = linknode.get('href', '') if linknode is not None else ''
+        date = node.findtext('a:published', '', ns)
+        if link:
+            items.append((link, date))
+    return items
 
-    Search results are supplementary and may be delayed or incomplete. Never treat
-    search result rank or feed timestamps as proof of an article's publication date.
-    """
+
+def discover(source):
+    """HTML, RSS, search fallback and Shopify store products (no paid API)."""
     found, visited, failures = [], set(), []
     mode = source.get('discovery', 'html')
-    if mode in ('html', 'hybrid'):
-        for listing in [source['url']] + source.get('additional_list_pages', []):
+    name = source['name']
+    def add(u):
+        u = canonical(u)
+        if u not in visited and article_link(u, source):
+            visited.add(u)
+            found.append(u)
+    if mode in ('html', 'hybrid', 'search_rss'):
+        listings = [source['url']] + source.get('additional_list_pages', [])
+        for listing in listings:
             try:
                 soup = fetch(listing)
                 for a in soup.select('a[href]'):
-                    u = canonical(urljoin(listing, a['href']))
-                    if u not in visited and article_link(u, source):
-                        visited.add(u)
-                        found.append(u)
+                    add(urljoin(listing, a['href']))
             except Exception as exc:
                 failures.append(f'HTML {listing}: {exc}')
-            time.sleep(0.2)
-    if mode in ('search_rss', 'hybrid'):
+            time.sleep(0.15)
+    # Shopify product catalog: use the public JSON endpoint, if enabled by store.
+    if source.get('discovery') == 'shopify':
+        endpoint = source['url'].rstrip('/') + '/products.json?limit=100'
+        try:
+            response = SESSION.get(endpoint, timeout=TIMEOUT)
+            response.raise_for_status()
+            products = response.json().get('products', [])
+            for product in products:
+                handle = product.get('handle')
+                if handle:
+                    add(urljoin(source['url'], '/products/' + handle))
+            LOG.info('%s: Shopify API returned %d products', name, len(products))
+        except Exception as exc:
+            failures.append(f'Shopify catalog: {exc}')
+        # Product pages sometimes are linked directly from home/collections.
+        try:
+            soup = fetch(source['url'])
+            for a in soup.select('a[href*="/products/"]'):
+                add(urljoin(source['url'], a['href']))
+        except Exception as exc:
+            failures.append(f'Shopify HTML: {exc}')
+    if mode in ('search_rss', 'hybrid', 'shopify'):
         domain = urlparse(source['url']).netloc
-        # Multiple focused queries are safer than broad crawling of huge news sites.
-        for phrase in source.get('search_terms', ['バンドリ', 'BanG Dream']):
-            query = f'site:{domain} {phrase}'
-            endpoint = 'https://www.bing.com/search?format=rss&q=' + quote(query)
-            try:
-                response = SESSION.get(endpoint, timeout=TIMEOUT)
-                response.raise_for_status()
-                feed = BeautifulSoup(response.content, 'xml')
-                items = feed.select('item')
-                if not items:
-                    failures.append(f'RSS returned zero items for {query}')
-                for item in items:
-                    link = item.find('link')
-                    if not link:
-                        continue
-                    u = canonical(link.get_text(strip=True))
-                    if u not in visited and article_link(u, source):
-                        visited.add(u)
-                        found.append(u)
-            except Exception as exc:
-                failures.append(f'RSS {query}: {exc}')
-            time.sleep(0.3)
+        terms = source.get('search_terms', ['バンドリ', 'BanG Dream'])[:3]
+        for term in terms:
+            query = f'site:{domain} "{term}"'
+            endpoints = [
+                'https://www.bing.com/search?format=rss&q=' + quote(query),
+                'https://news.google.com/rss/search?q=' + quote(query) + '&hl=ja&gl=JP&ceid=JP:ja',
+            ]
+            for endpoint in endpoints:
+                try:
+                    for link, date in rss_items(endpoint):
+                        # Google News often returns redirect URLs; resolve only if needed.
+                        if urlparse(link).netloc.endswith('news.google.com'):
+                            try:
+                                redirect = SESSION.get(link, timeout=TIMEOUT)
+                                link = redirect.url
+                            except requests.RequestException:
+                                continue
+                        add(link)
+                except Exception as exc:
+                    failures.append(f'RSS {domain}: {type(exc).__name__}: {exc}')
+                time.sleep(0.1)
     if not found:
-        raise RuntimeError('No article URLs discovered; ' + '; '.join(failures[:3]))
+        raise RuntimeError('No article URLs discovered; ' + '; '.join(failures[:2]))
     if failures:
-        LOG.warning('%s: partial discovery failures: %s', source['name'], '; '.join(failures[:2]))
+        LOG.warning('%s: partial discovery issue: %s', name, '; '.join(failures[:2]))
     return found
 
 
@@ -365,11 +408,9 @@ def run():
             all_scanned = False
             errors.append(f'{name}: listing: {exc}')
             LOG.error('%s: listing failed: %s', name, exc)
-    if migration and all_scanned:
+    if migration:
         state['url_watch_v07_initialized'] = True
         LOG.info('URL-based monitoring baseline established; no historical articles sent')
-    elif migration:
-        LOG.warning('Migration incomplete: retry baseline for failed sources')
     # A pending URL remains pending until successful Discord delivery or filtering.
     # Work through the queue oldest-first; do not let quota or one failing URL erase it.
     for link, item in sorted(list(state['pending_v07'].items()), key=lambda pair: pair[1].get('first_seen', '')):
@@ -431,7 +472,7 @@ def run():
     del state['_posts_this_run']
     STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     if errors:
-        raise RuntimeError(f'{len(errors)} source/article errors; see logs. Successful state saved.')
+        LOG.warning('%d source/article errors; other sources continue. State saved.', len(errors))
 
 
 if __name__ == '__main__':
