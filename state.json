@@ -1073,6 +1073,26 @@
         "https://prtimes.jp/main/html/rd/p/000000018.000169010.html": {
           "hash": null,
           "first_seen": "2026-10-21T11:59:16.974909+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000001.000193063.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T12:34:44.660178+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000945.000013809.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T12:34:44.660230+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000944.000013809.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T12:34:44.660273+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000943.000013809.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T12:34:44.660310+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000942.000013809.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T12:34:44.660331+00:00"
         }
       },
       "observed_v07": {
@@ -1140,7 +1160,12 @@
         "https://prtimes.jp/main/html/rd/p/000000368.000119996.html": "2026-10-21T11:59:16.974822+00:00",
         "https://prtimes.jp/main/html/rd/p/000000648.000016205.html": "2026-10-21T11:59:16.974844+00:00",
         "https://prtimes.jp/main/html/rd/p/000000346.000165726.html": "2026-10-21T11:59:16.974868+00:00",
-        "https://prtimes.jp/main/html/rd/p/000000018.000169010.html": "2026-10-21T11:59:16.974887+00:00"
+        "https://prtimes.jp/main/html/rd/p/000000018.000169010.html": "2026-10-21T11:59:16.974887+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000001.000193063.html": "2026-10-21T12:34:44.660068+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000945.000013809.html": "2026-10-21T12:34:44.660186+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000944.000013809.html": "2026-10-21T12:34:44.660236+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000943.000013809.html": "2026-10-21T12:34:44.660278+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000942.000013809.html": "2026-10-21T12:34:44.660313+00:00"
       },
       "url_watch_v07_initialized": true,
       "recent_backfill_v11_done": true
@@ -1517,6 +1542,14 @@
         "https://dengekionline.com/article/202610/91538/": {
           "hash": null,
           "first_seen": "2026-10-21T11:59:17.509984+00:00"
+        },
+        "https://dengekionline.com/article/202610/91637/": {
+          "hash": null,
+          "first_seen": "2026-10-21T12:34:46.234922+00:00"
+        },
+        "https://dengekionline.com/article/202610/91603/": {
+          "hash": null,
+          "first_seen": "2026-10-21T12:34:46.234949+00:00"
         }
       },
       "observed_v07": {
@@ -1609,7 +1642,9 @@
         "https://dengekionline.com/article/202610/88903/": "2026-10-21T11:59:17.509875+00:00",
         "https://dengekionline.com/article/202610/91633/": "2026-10-21T11:59:17.509933+00:00",
         "https://dengekionline.com/article/202610/91630/": "2026-10-21T11:59:17.509954+00:00",
-        "https://dengekionline.com/article/202610/91538/": "2026-10-21T11:59:17.509970+00:00"
+        "https://dengekionline.com/article/202610/91538/": "2026-10-21T11:59:17.509970+00:00",
+        "https://dengekionline.com/article/202610/91637/": "2026-10-21T12:34:46.234877+00:00",
+        "https://dengekionline.com/article/202610/91603/": "2026-10-21T12:34:46.234925+00:00"
       },
       "url_watch_v07_initialized": true,
       "recent_backfill_v11_done": true
