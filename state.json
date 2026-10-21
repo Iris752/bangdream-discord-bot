@@ -1013,6 +1013,30 @@
         "https://prtimes.jp/main/html/rd/p/000003560.000006568.html": {
           "hash": null,
           "first_seen": "2026-10-21T10:51:52.532724+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000296.000012425.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T11:04:42.858412+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000001.000192905.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T11:04:42.858460+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000151.000046917.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T11:04:42.858504+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000005152.000019470.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T11:04:42.858548+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000005164.000003670.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T11:04:42.858584+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000043.000162727.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T11:04:42.858617+00:00"
         }
       },
       "observed_v07": {
@@ -1065,7 +1089,13 @@
         "https://prtimes.jp/main/html/rd/p/000000016.000144268.html": "2026-10-21T10:43:28.898919+00:00",
         "https://prtimes.jp/main/html/rd/p/000000004.000170911.html": "2026-10-21T10:43:28.899026+00:00",
         "https://prtimes.jp/main/html/rd/p/000002694.000060591.html": "2026-10-21T10:43:28.899059+00:00",
-        "https://prtimes.jp/main/html/rd/p/000003560.000006568.html": "2026-10-21T10:51:52.532677+00:00"
+        "https://prtimes.jp/main/html/rd/p/000003560.000006568.html": "2026-10-21T10:51:52.532677+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000296.000012425.html": "2026-10-21T11:04:42.858299+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000001.000192905.html": "2026-10-21T11:04:42.858419+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000151.000046917.html": "2026-10-21T11:04:42.858465+00:00",
+        "https://prtimes.jp/main/html/rd/p/000005152.000019470.html": "2026-10-21T11:04:42.858508+00:00",
+        "https://prtimes.jp/main/html/rd/p/000005164.000003670.html": "2026-10-21T11:04:42.858553+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000043.000162727.html": "2026-10-21T11:04:42.858588+00:00"
       },
       "url_watch_v07_initialized": true,
       "recent_backfill_v11_done": true
@@ -1422,6 +1452,10 @@
         "https://dengekionline.com/article/202610/91628/": {
           "hash": null,
           "first_seen": "2026-10-21T10:51:58.556147+00:00"
+        },
+        "https://dengekionline.com/article/202610/91597/": {
+          "hash": null,
+          "first_seen": "2026-10-21T11:04:43.337123+00:00"
         }
       },
       "observed_v07": {
@@ -1509,7 +1543,8 @@
         "https://dengekionline.com/article/202610/91064/": "2026-10-21T10:32:23.278814+00:00",
         "https://dengekionline.com/article/202610/90682/": "2026-10-21T10:43:34.494947+00:00",
         "https://dengekionline.com/article/202610/91626/": "2026-10-21T10:43:34.495010+00:00",
-        "https://dengekionline.com/article/202610/91628/": "2026-10-21T10:51:58.556128+00:00"
+        "https://dengekionline.com/article/202610/91628/": "2026-10-21T10:51:58.556128+00:00",
+        "https://dengekionline.com/article/202610/91597/": "2026-10-21T11:04:43.337054+00:00"
       },
       "url_watch_v07_initialized": true,
       "recent_backfill_v11_done": true
@@ -1712,6 +1747,10 @@
         "https://animeanime.jp/article/2026/10/21/104063.html": {
           "hash": null,
           "first_seen": "2026-10-21T10:51:59.924070+00:00"
+        },
+        "https://animeanime.jp/article/2026/10/21/104064.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T11:04:44.845963+00:00"
         }
       },
       "observed_v07": {
@@ -1763,7 +1802,8 @@
         "https://animeanime.jp/article/2026/10/20/104000.html": "2026-10-21T10:32:51.924744+00:00",
         "https://animeanime.jp/article/2026/10/20/104023.html": "2026-10-21T10:32:51.924748+00:00",
         "https://animeanime.jp/article/2026/10/20/104021.html": "2026-10-21T10:32:51.924752+00:00",
-        "https://animeanime.jp/article/2026/10/21/104063.html": "2026-10-21T10:51:59.924048+00:00"
+        "https://animeanime.jp/article/2026/10/21/104063.html": "2026-10-21T10:51:59.924048+00:00",
+        "https://animeanime.jp/article/2026/10/21/104064.html": "2026-10-21T11:04:44.845913+00:00"
       },
       "url_watch_v07_initialized": true,
       "recent_backfill_v11_done": true
