@@ -456,7 +456,8 @@
         "https://bang-dream.com/news/2232/": "2026-10-21T10:22:07.594159+00:00",
         "https://bang-dream.com/news/2225/": "2026-10-21T10:22:07.594163+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     },
     "ガルパ公式": {
       "initialized": true,
@@ -514,7 +515,8 @@
         "https://bang-dream.bushimo.jp/news/20260112/post-350/": "2026-10-21T10:22:08.659441+00:00",
         "https://bang-dream.bushimo.jp/news/20251215/post-348/": "2026-10-21T10:22:08.659449+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     },
     "MyGO!!!!! アニメ": {
       "initialized": true,
@@ -572,7 +574,8 @@
         "https://anime.bang-dream.com/mygo/news/post-26/": "2026-10-21T10:22:09.589995+00:00",
         "https://anime.bang-dream.com/mygo/news/post-25/": "2026-10-21T10:22:09.590002+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     },
     "Ave Mujica アニメ": {
       "initialized": true,
@@ -625,7 +628,8 @@
         "https://anime.bang-dream.com/avemujica/news/post-8/": "2026-10-21T10:22:10.120507+00:00",
         "https://anime.bang-dream.com/avemujica/news/post-7/": "2026-10-21T10:22:10.120510+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     },
     "Ave Mujica 劇場版": {
       "initialized": true,
@@ -678,7 +682,8 @@
         "https://avemujica-movie.bang-dream.com/news/post-2/": "2026-10-21T10:22:10.976892+00:00",
         "https://avemujica-movie.bang-dream.com/news/post-1/": "2026-10-21T10:22:10.976907+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     },
     "ブシロードミュージック お知らせ（関連情報）": {
       "initialized": true,
@@ -736,7 +741,8 @@
         "https://bushiroad-music.com/news/20656/": "2026-10-21T10:22:11.953165+00:00",
         "https://bushiroad-music.com/news/20580/": "2026-10-21T10:22:11.953169+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     },
     "MyGO!!!!! × Ave Mujica 続編": {
       "initialized": true,
@@ -749,7 +755,8 @@
       "observed_v07": {
         "https://anime.bang-dream.com/mygo-avemujica/news/post-1/": "2026-10-21T10:22:14.352719+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     },
     "Our Notes 公式": {
       "initialized": true,
@@ -772,7 +779,8 @@
         "https://bang-dream-on.bushimo.jp/news/post-11/": "2026-10-21T10:22:16.700389+00:00",
         "https://bang-dream-on.bushimo.jp/news/post-10/": "2026-10-21T10:22:16.700393+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     },
     "ブシロード公式": {
       "initialized": false,
@@ -795,7 +803,8 @@
         "https://www.sanzigen.co.jp/news/20250907.html/": "2026-10-21T10:22:20.522759+00:00",
         "https://www.sanzigen.co.jp/news/20250907.html": "2026-10-21T10:30:18.070685+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     },
     "ブシロードオンラインストア": {
       "initialized": false,
@@ -988,6 +997,18 @@
         "https://prtimes.jp/main/html/rd/p/000000098.000084554.html": {
           "hash": null,
           "first_seen": "2026-10-21T10:31:04.138247+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000016.000144268.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:43:28.899021+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000000004.000170911.html": {
+          "hash": "04bcb9a9fc98098efeafb47f67c9a3d9a6b1ebdf8dec24e0dab0bf5004e76d3c",
+          "first_seen": "2026-10-21T10:43:28.899029+00:00"
+        },
+        "https://prtimes.jp/main/html/rd/p/000002694.000060591.html": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:43:28.899084+00:00"
         }
       },
       "observed_v07": {
@@ -1036,9 +1057,13 @@
         "https://prtimes.jp/main/html/rd/p/000000002.000173993.html": "2026-10-21T10:31:04.138217+00:00",
         "https://prtimes.jp/main/html/rd/p/000000155.000162689.html": "2026-10-21T10:31:04.138228+00:00",
         "https://prtimes.jp/main/html/rd/p/000000285.000078233.html": "2026-10-21T10:31:04.138236+00:00",
-        "https://prtimes.jp/main/html/rd/p/000000098.000084554.html": "2026-10-21T10:31:04.138244+00:00"
+        "https://prtimes.jp/main/html/rd/p/000000098.000084554.html": "2026-10-21T10:31:04.138244+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000016.000144268.html": "2026-10-21T10:43:28.898919+00:00",
+        "https://prtimes.jp/main/html/rd/p/000000004.000170911.html": "2026-10-21T10:43:28.899026+00:00",
+        "https://prtimes.jp/main/html/rd/p/000002694.000060591.html": "2026-10-21T10:43:28.899059+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     },
     "音楽ナタリー": {
       "initialized": false,
@@ -1380,6 +1405,14 @@
         "https://dengekionline.com/article/202610/91064/": {
           "hash": null,
           "first_seen": "2026-10-21T10:32:23.278816+00:00"
+        },
+        "https://dengekionline.com/article/202610/90682/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:43:34.495004+00:00"
+        },
+        "https://dengekionline.com/article/202610/91626/": {
+          "hash": null,
+          "first_seen": "2026-10-21T10:43:34.495043+00:00"
         }
       },
       "observed_v07": {
@@ -1464,9 +1497,12 @@
         "https://dengekionline.com/article/202610/90780/": "2026-10-21T10:32:23.278802+00:00",
         "https://dengekionline.com/article/202610/91317/": "2026-10-21T10:32:23.278806+00:00",
         "https://dengekionline.com/article/202610/90697/": "2026-10-21T10:32:23.278810+00:00",
-        "https://dengekionline.com/article/202610/91064/": "2026-10-21T10:32:23.278814+00:00"
+        "https://dengekionline.com/article/202610/91064/": "2026-10-21T10:32:23.278814+00:00",
+        "https://dengekionline.com/article/202610/90682/": "2026-10-21T10:43:34.494947+00:00",
+        "https://dengekionline.com/article/202610/91626/": "2026-10-21T10:43:34.495010+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     },
     "アニメ！アニメ！": {
       "initialized": true,
@@ -1714,7 +1750,8 @@
         "https://animeanime.jp/article/2026/10/20/104023.html": "2026-10-21T10:32:51.924748+00:00",
         "https://animeanime.jp/article/2026/10/20/104021.html": "2026-10-21T10:32:51.924752+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     },
     "GAME Watch": {
       "initialized": true,
@@ -2097,7 +2134,8 @@
         "https://game.watch.impress.co.jp/docs/news/2147639.html": "2026-10-21T10:33:17.137203+00:00",
         "https://game.watch.impress.co.jp/docs/news/2147420.html": "2026-10-21T10:33:17.137207+00:00"
       },
-      "url_watch_v07_initialized": true
+      "url_watch_v07_initialized": true,
+      "recent_backfill_v11_done": true
     }
   },
   "global_sent": {
@@ -2126,10 +2164,11 @@
     "https://bang-dream.com/news/2422/": "710e2bc20790169052fad29e06f5c4a1bdd8013643e7117dc5cd6962b8a7dd52",
     "https://bang-dream.com/news/2425/": "8e02333116ec8fe59393dd8492d94829155f7fc1f1be358f146480f510a203a8",
     "https://bang-dream.com/news/2424/": "0e30894fc31ae1b473fc7ac291676917520ff29e51cb85242a92d8a2761c254b",
-    "https://avemujica-movie.bang-dream.com/news/post-10/": "15e3465d15bb2cfb03b38b37ab72f24c216d704e660f5f822a0295b095f0f114"
+    "https://avemujica-movie.bang-dream.com/news/post-10/": "15e3465d15bb2cfb03b38b37ab72f24c216d704e660f5f822a0295b095f0f114",
+    "https://prtimes.jp/main/html/rd/p/000000004.000170911.html": "04bcb9a9fc98098efeafb47f67c9a3d9a6b1ebdf8dec24e0dab0bf5004e76d3c"
   },
   "daily_posts": {
-    "2026-10-21": 1
+    "2026-10-21": 2
   },
   "pending_v07": {},
   "url_watch_v07_initialized": true
