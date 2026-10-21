@@ -13,56 +13,40 @@
       "https://bang-dream.com/news/?category=Release",
       "https://bang-dream.com/news/?category=Goods",
       "https://bang-dream.com/news/?category=Media"
-    ]
+    ],
+    "discovery": "html"
   },
   {
     "name": "ガルパ公式",
     "url": "https://bang-dream.bushimo.jp/news/",
     "article_pattern": "/news/[0-9]{8}/post-[0-9]+/?$",
     "enabled": true,
-    "detect_updates": true
+    "detect_updates": true,
+    "discovery": "html"
   },
   {
     "name": "MyGO!!!!! アニメ",
     "url": "https://anime.bang-dream.com/mygo/news/",
     "article_pattern": "/(news|information|info)/[^/]+/?$",
     "enabled": true,
-    "detect_updates": true
+    "detect_updates": true,
+    "discovery": "html"
   },
   {
     "name": "Ave Mujica アニメ",
     "url": "https://anime.bang-dream.com/avemujica/news/",
     "article_pattern": "/(news|information|info)/[^/]+/?$",
     "enabled": true,
-    "detect_updates": true
+    "detect_updates": true,
+    "discovery": "html"
   },
   {
     "name": "Ave Mujica 劇場版",
     "url": "https://avemujica-movie.bang-dream.com/news/",
     "article_pattern": "/(news|information|info)/[^/]+/?$",
     "enabled": true,
-    "detect_updates": true
-  },
-  {
-    "name": "MyGO!!!!! × Ave Mujica 続編",
-    "url": "https://anime.bang-dream.com/mygo-avemujica/",
-    "article_pattern": "/(news|information|info)/[^/]+/?$",
-    "enabled": false,
-    "detect_updates": true
-  },
-  {
-    "name": "ブシロード公式（関連情報のみ）",
-    "url": "https://bushiroad.com/",
-    "article_pattern": "/(news|information|topics|info)/[^/]+/?$",
-    "enabled": false,
-    "filter_related": true
-  },
-  {
-    "name": "ブシロードミュージック（関連情報のみ）",
-    "url": "https://bushiroad-music.com/",
-    "article_pattern": "/(news|information|topics|info)/[^/]+/?$",
-    "enabled": false,
-    "filter_related": true
+    "detect_updates": true,
+    "discovery": "html"
   },
   {
     "name": "ブシロードミュージック お知らせ（関連情報）",
@@ -70,79 +54,161 @@
     "article_pattern": "/news/[0-9]+/?$",
     "enabled": true,
     "filter_related": true,
-    "detect_updates": true
-  },
-  {
-    "name": "ブシロードミュージック トピックス（関連情報）",
-    "url": "https://bushiroad-music.com/",
-    "article_pattern": "/(topics|music|release|live)/[0-9]+/?$",
-    "enabled": false,
-    "filter_related": true,
     "detect_updates": true,
-    "note": "記事URL規則を検証後に有効化"
+    "discovery": "html"
   },
   {
-    "name": "Our Notes 公式（候補）",
-    "url": "https://bang-dream-on.bushimo.jp/",
+    "name": "MyGO!!!!! × Ave Mujica 続編",
+    "url": "https://anime.bang-dream.com/mygo-avemujica/",
     "article_pattern": "/(news|information|info)/[^/]+/?$",
-    "enabled": false,
-    "detect_updates": true,
-    "note": "ニュース一覧の場所と記事URL形式の検証待ち"
+    "enabled": true,
+    "discovery": "hybrid",
+    "detect_updates": false,
+    "filter_related": false,
+    "search_terms": [
+      "バンドリ",
+      "BanG Dream",
+      "MyGO Ave Mujica"
+    ]
   },
   {
-    "name": "サンジゲン（関連情報）",
-    "url": "https://www.sanzigen.co.jp/news.html",
-    "article_pattern": "/news/[0-9a-z_-]+/?$",
-    "enabled": false,
+    "name": "Our Notes 公式",
+    "url": "https://bang-dream-on.bushimo.jp/",
+    "article_pattern": "/(news|information|info|topics)/[^/]+/?$",
+    "enabled": true,
+    "discovery": "hybrid",
+    "detect_updates": false,
+    "filter_related": false,
+    "search_terms": [
+      "バンドリ",
+      "BanG Dream",
+      "MyGO Ave Mujica"
+    ]
+  },
+  {
+    "name": "ブシロード公式",
+    "url": "https://bushiroad.com/",
+    "article_pattern": "/(news|information|topics|info)/[^/]+/?$",
+    "enabled": true,
+    "discovery": "search_rss",
+    "detect_updates": false,
     "filter_related": true,
-    "note": "ニュース一覧のリンク構造を検証待ち"
+    "search_terms": [
+      "バンドリ",
+      "BanG Dream",
+      "MyGO Ave Mujica"
+    ]
   },
   {
-    "name": "PR TIMES（関連情報）",
+    "name": "サンジゲン",
+    "url": "https://www.sanzigen.co.jp/news.html",
+    "article_pattern": "/(news|information|topics)/[^/]+/?$|/news[^/]*\\.html$",
+    "enabled": true,
+    "discovery": "hybrid",
+    "detect_updates": false,
+    "filter_related": true,
+    "search_terms": [
+      "バンドリ",
+      "BanG Dream",
+      "MyGO Ave Mujica"
+    ]
+  },
+  {
+    "name": "ブシロードオンラインストア",
+    "url": "https://bushiroad-store.com/",
+    "article_pattern": "/(products|collections|blogs|pages)/[^/]+/?$",
+    "enabled": true,
+    "discovery": "search_rss",
+    "detect_updates": false,
+    "filter_related": true,
+    "search_terms": [
+      "バンドリ",
+      "BanG Dream",
+      "MyGO Ave Mujica"
+    ]
+  },
+  {
+    "name": "PR TIMES",
     "url": "https://prtimes.jp/",
     "article_pattern": "/main/html/rd/p/[0-9]+\\.[0-9]+\\.html$",
-    "enabled": false,
+    "enabled": true,
+    "discovery": "search_rss",
+    "detect_updates": false,
     "filter_related": true,
-    "note": "サイト全体の巡回は行わず専用検索/RSSを実装後に有効化"
+    "search_terms": [
+      "バンドリ",
+      "BanG Dream",
+      "MyGO Ave Mujica"
+    ]
   },
   {
-    "name": "音楽ナタリー（関連情報）",
+    "name": "音楽ナタリー",
     "url": "https://natalie.mu/music/",
     "article_pattern": "/music/news/[0-9]+/?$",
-    "enabled": false,
+    "enabled": true,
+    "discovery": "search_rss",
+    "detect_updates": false,
     "filter_related": true,
-    "note": "バンドリ関連の専用検索/RSS実装待ち"
+    "search_terms": [
+      "バンドリ",
+      "BanG Dream",
+      "MyGO Ave Mujica"
+    ]
   },
   {
-    "name": "4Gamer（関連情報）",
+    "name": "4Gamer",
     "url": "https://www.4gamer.net/",
-    "article_pattern": "/games/[0-9]+/G[0-9]+/[0-9]+/?$",
-    "enabled": false,
+    "article_pattern": "/games/[^/]+/[^/]+/[^/]+/?$",
+    "enabled": true,
+    "discovery": "search_rss",
+    "detect_updates": false,
     "filter_related": true,
-    "note": "バンドリ関連記事の一覧URLと記事形式を検証待ち"
+    "search_terms": [
+      "バンドリ",
+      "BanG Dream",
+      "MyGO Ave Mujica"
+    ]
   },
   {
-    "name": "電撃オンライン（関連情報）",
+    "name": "電撃オンライン",
     "url": "https://dengekionline.com/",
-    "article_pattern": "/articles/[0-9]+/?$",
-    "enabled": false,
+    "article_pattern": "/(articles|article)/[^/]+/?$",
+    "enabled": true,
+    "discovery": "search_rss",
+    "detect_updates": false,
     "filter_related": true,
-    "note": "記事URL形式を検証待ち"
+    "search_terms": [
+      "バンドリ",
+      "BanG Dream",
+      "MyGO Ave Mujica"
+    ]
   },
   {
-    "name": "アニメ！アニメ！（関連情報）",
+    "name": "アニメ！アニメ！",
     "url": "https://animeanime.jp/",
     "article_pattern": "/article/[0-9]{4}/[0-9]{2}/[0-9]{2}/[0-9]+\\.html$",
-    "enabled": false,
+    "enabled": true,
+    "discovery": "search_rss",
+    "detect_updates": false,
     "filter_related": true,
-    "note": "RSSを使用する専用実装待ち"
+    "search_terms": [
+      "バンドリ",
+      "BanG Dream",
+      "MyGO Ave Mujica"
+    ]
   },
   {
-    "name": "GAME Watch（関連情報）",
+    "name": "GAME Watch",
     "url": "https://game.watch.impress.co.jp/",
-    "article_pattern": "/docs/news/[0-9]+\\.html$",
-    "enabled": false,
+    "article_pattern": "/docs/(news|feature|review)/[0-9]+\\.html$",
+    "enabled": true,
+    "discovery": "search_rss",
+    "detect_updates": false,
     "filter_related": true,
-    "note": "バンドリ記事検索/フィードの検証待ち"
+    "search_terms": [
+      "バンドリ",
+      "BanG Dream",
+      "MyGO Ave Mujica"
+    ]
   }
 ]
