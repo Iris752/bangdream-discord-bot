@@ -135,45 +135,87 @@ def extract(url):
     return title[:220], summary
 
 
+DATE_PATTERN = re.compile(
+    r'(?<!\d)(20\d{2})\s*[年./\-]\s*(0?[1-9]|1[0-2])\s*[月./\-]\s*'
+    r'(0?[1-9]|[12]\d|3[01])\s*日?(?!\d)'
+)
+
+
+def parse_publication_value(value):
+    """Parse explicit publication-date text; assume JST if timezone is omitted."""
+    if not value:
+        return None
+    raw = clean(str(value))
+    try:
+        dt = datetime.fromisoformat(raw.replace('Z', '+00:00'))
+    except (ValueError, TypeError):
+        match = DATE_PATTERN.search(raw)
+        if not match:
+            return None
+        try:
+            dt = datetime(*map(int, match.groups()))
+        except ValueError:
+            return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=JST)
+    return dt.astimezone(timezone.utc)
+
+
 def publication_date(url):
-    """Read a published date from structured article metadata, never the crawl time."""
+    """Use article-specific metadata and publication labels, not event dates."""
     soup = fetch(url)
     values = []
-    for selector in ('meta[property="article:published_time"]', 'meta[name="date"]',
-                     'meta[name="pubdate"]', 'meta[itemprop="datePublished"]',
-                     'meta[property="datePublished"]', 'meta[name="datePublished"]',
-                     'time[datetime]'):
+    selectors = (
+        'meta[property="article:published_time"]',
+        'meta[name="date"]', 'meta[name="pubdate"]',
+        'meta[itemprop="datePublished"]', 'meta[property="datePublished"]',
+        'meta[name="datePublished"]', 'meta[name="DC.date.issued"]',
+        'meta[name="dc.date"]', 'time[datetime]',
+        'time[pubdate]', '[itemprop="datePublished"]',
+    )
+    for selector in selectors:
         for node in soup.select(selector):
-            value = node.get('content') or node.get('datetime')
+            value = node.get('content') or node.get('datetime') or node.get_text(' ', strip=True)
             if value:
-                values.append(value)
+                values.append((selector, value))
     for node in soup.select('script[type="application/ld+json"]'):
         try:
             data = json.loads(node.string or node.get_text())
-            queue = data if isinstance(data, list) else [data]
+            queue = [data]
             while queue:
                 item = queue.pop()
                 if isinstance(item, list):
                     queue.extend(item)
                 elif isinstance(item, dict):
                     if item.get('datePublished'):
-                        values.append(item['datePublished'])
-                    if '@graph' in item:
-                        queue.append(item['@graph'])
+                        values.append(('jsonld.datePublished', item['datePublished']))
+                    queue.extend(v for v in item.values() if isinstance(v, (dict, list)))
         except (ValueError, TypeError):
             continue
-    # Date encoded in some official article URLs (YYYYMMDD).
-    match = re.search(r'/(20\d{2})(\d{2})(\d{2})/', url)
+    # Date shown near the article heading, not dates of concerts/ticket sales in body.
+    for selector in (
+        'article .date', 'article .news-date', 'article .news_date',
+        'article .post-date', 'article .published', 'article time',
+        '.news-detail .date', '.news_detail .date',
+        '.newsDetail .date', '.newsDetail__date', '.news-detail__date',
+        '.news-date', '.news_date', '.post-date', '.publish-date',
+        '.published-date', '.entry-date', '.article-date',
+        '.news__date', '.news-detail__head time',
+    ):
+        for node in soup.select(selector)[:5]:
+            value = node.get('datetime') or node.get('content') or node.get_text(' ', strip=True)
+            if value:
+                values.append((selector, value))
+    # Date-bearing URL path is used only when it is unambiguously YYYYMMDD.
+    match = re.search(r'/(20\d{2})(\d{2})(\d{2})(?:/|$)', urlparse(url).path)
     if match:
-        values.append('-'.join(match.groups()))
-    for value in values:
-        try:
-            raw = str(value).strip().replace('Z', '+00:00')
-            date = datetime.fromisoformat(raw)
-            # Japanese official pages commonly use local naive publication dates.
-            return date.replace(tzinfo=JST).astimezone(timezone.utc) if date.tzinfo is None else date.astimezone(timezone.utc)
-        except (ValueError, TypeError):
-            continue
+        values.append(('url', '-'.join(match.groups())))
+    for origin, value in values:
+        dt = parse_publication_value(value)
+        if dt:
+            LOG.debug('Publication date via %s: %s => %s', origin, url, dt.isoformat())
+            return dt
+    LOG.info('No publication date in supported fields: %s', url)
     return None
 
 
@@ -184,7 +226,7 @@ def in_window(date):
 def quota_available(state):
     today = datetime.now(JST).date().isoformat()
     daily = state.setdefault('daily_posts', {})
-    # UTC calendar day. Remove older counters to avoid unbounded state.
+    # JST calendar day. Remove older counters to avoid unbounded state.
     for key in list(daily):
         if key != today:
             del daily[key]
